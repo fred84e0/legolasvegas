@@ -1,0 +1,23 @@
+{
+  "name": "legolasvegas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watchsass": "node-sass --output-style expanded myfile.scss output.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fred84e0/legolasvegas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fred84e0/legolasvegas/issues"
+  },
+  "homepage": "https://github.com/fred84e0/legolasvegas#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
