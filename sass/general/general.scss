@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url(img/bokeh.jpg);
+
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-radius: 5px;
+  background: #8a6f9e;
+  border: none;
+  color: #ffffff;
+}
+
+#spin,
+#hold1,
+#hold2,
+#hold3 {
+  cursor: pointer;
+}
+#spin:active,
+#hold1:active,
+#hold2:active,
+#hold3:active {
+  opacity: 0.8;
+}

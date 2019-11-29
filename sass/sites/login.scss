@@ -199,8 +199,12 @@ form h2 {
   width: 400px;
 
   border: 3px solid var(--button-color);
-
-  margin: 200px auto;
+  background: white;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .show-modal {

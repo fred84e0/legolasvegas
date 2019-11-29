@@ -18,6 +18,16 @@
   },
   "homepage": "https://github.com/fred84e0/legolasvegas#readme",
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.13.0",
+    "parcel-plugin-static-files-copy": "^2.2.1",
+    "sass": "^1.23.7"
+  },
+  "dependencies": {
+    "svg": "^0.1.0"
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "watcherGlob": "**"
   }
 }

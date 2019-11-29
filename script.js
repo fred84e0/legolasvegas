@@ -1,10 +1,18 @@
-start();
-
 // BURGERMENU
 
 let burgerMenu = document.querySelector("#header_menu");
 let screenWidth = window.matchMedia("(min-width: 900px)");
 screenWidth.addListener(screenMeasure);
+
+window.addEventListener("DOMContentLoaded", event => {
+  fetch("svg/slotmachine.svg")
+    .then(response => response.text())
+    .then(svg => {
+      document.querySelector("#slotmachine").innerHTML = svg;
+    });
+});
+
+start();
 
 document.querySelector("#burger_button").addEventListener("click", openSidebar);
 
@@ -36,8 +44,6 @@ function screenMeasure(screenWidth) {
     document.querySelector("#header_menu").style.display = "none";
   }
 }
-
-function clickColor() {}
 
 function start() {
   document.querySelector("#login-btn").addEventListener("click", loginModal);
