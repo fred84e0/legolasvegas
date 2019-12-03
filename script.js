@@ -89,16 +89,15 @@ function closeModal() {
 }
 
 function muteSite() {
-  console.log("mute");
-
   if (document.querySelector("#sound").classList.contains("mute-on")) {
+    console.log("hej1");
+    document.querySelector("#sound").classList.remove("mute-on");
     document.querySelector("#sound").classList.add("mute-off");
-  }
-  if (document.querySelector("#sound").classList.contains("mute-off")) {
+  } else {
+    console.log("hej2");
+    document.querySelector("#sound").classList.remove("mute-off");
     document.querySelector("#sound").classList.add("mute-on");
   }
-
-  document.querySelector("#sound").classList.add("mute-on");
 }
 
 // document.querySelector("#signup-btn").addEventListener("click", openModal);

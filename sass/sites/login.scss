@@ -170,6 +170,13 @@ header a {
   cursor: pointer;
   color: white;
   box-shadow: 2px 2px 5px grey;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.header-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 10px grey;
 }
 
 .header-btn p {
