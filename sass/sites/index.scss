@@ -27,6 +27,20 @@
   }
 }
 
+.slot_spinners {
+  position: absolute;
+  left: 16vw;
+  top: 59vw;
+  display: flex;
+  justify-content: space-between;
+  width: 68vw;
+
+  img {
+    width: 13vw;
+    height: 100%;
+  }
+}
+
 @media screen and (min-width: 500px) {
   #slotmachine {
     height: 95vh;

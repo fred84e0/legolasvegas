@@ -170,8 +170,8 @@
 <circle class="st8" cx="592" cy="80.3" r="3"/>
 <circle class="st7" cx="633" cy="124.3" r="8.8"/>
 <circle class="st8" cx="633" cy="124.3" r="3"/>
-
-	<path  id="hold1" class="st4" d="M107.8,660.5h96.1c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96.1c-4.4,0-7.9-3.5-7.9-7.9v-37.8
+<g id="hold1">
+	<path class="st4" d="M107.8,660.5h96.1c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96.1c-4.4,0-7.9-3.5-7.9-7.9v-37.8
 		C99.9,664,103.4,660.5,107.8,660.5z"/>
 	<path class="st0" d="M140.2,675.3c-3.2,7.1-5.5,14.6-6.8,22.2h-6.7c0.9-2.3,1.9-5.2,3-8.8c-1.1,0-2.1,0-3.1,0c-0.8,0-1.5,0-2.2,0
 		c-0.8,2.8-1.5,5.8-2,8.8h-6.7c1.9-4.8,4.1-12.2,6.8-22.2h6.7c-1.3,2.8-2.4,5.7-3.4,8.7c0.7,0,1.5,0,2.3,0c1,0,2,0,3.1-0.1
@@ -186,9 +186,9 @@
 		c2.9-7,5.1-14.3,6.5-21.8h7.8c0.6,0.1,1.1,0.2,1.7,0.4c2.9,0.8,4.5,2.5,4.8,5.2C195.8,681.4,195.8,681.9,195.8,682.5z M190.1,683
 		c0-2.2-1-3.3-2.9-3.3h-0.5l-3.5,11.8c0.4,0.1,0.8,0.1,1.2,0.1c1.7,0,3.2-1,4.3-3.1C189.6,686.8,190.1,684.9,190.1,683L190.1,683z"
 		/>
-
-
-	<path id="hold2" class="st4" d="M290,660.5h96c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96c-4.4,0-7.9-3.5-7.9-7.9v-37.8
+</g>
+<g id="hold2">
+	<path class="st4" d="M290,660.5h96c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96c-4.4,0-7.9-3.5-7.9-7.9v-37.8
 		C282.1,664,285.6,660.5,290,660.5z"/>
 	<path class="st0" d="M322.4,675.3c-3.2,7.1-5.5,14.6-6.8,22.2h-6.7c0.9-2.3,1.9-5.2,3-8.8c-1.1,0-2.1,0-3.1,0c-0.8,0-1.5,0-2.2,0
 		c-0.8,2.8-1.5,5.8-2,8.8h-6.7c1.9-4.8,4.1-12.2,6.8-22.2h6.7c-1.3,2.8-2.4,5.7-3.4,8.7c0.7,0,1.5,0,2.3,0c1,0,2,0,3.1-0.1
@@ -203,9 +203,9 @@
 		c3.2-7.6,5.5-15.6,7.1-23.7h8.5c0.6,0.1,1.2,0.2,1.8,0.4c3.1,0.9,4.9,2.8,5.2,5.6C378,681.9,378,682.5,378,683.1z M371.8,683.7
 		c0-2.4-1.1-3.6-3.2-3.6h-0.5l-3.9,12.8c0.4,0.1,0.9,0.2,1.4,0.2c1.9,0,3.5-1.1,4.7-3.4C371.3,687.8,371.8,685.8,371.8,683.7
 		L371.8,683.7z"/>
-
-
-	<path id="hold3" class="st4" d="M468.4,660.5h96.1c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96.1c-4.4,0-7.9-3.5-7.9-7.9v-37.8
+</g>
+<g id="hold3">
+	<path class="st4" d="M468.4,660.5h96.1c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96.1c-4.4,0-7.9-3.5-7.9-7.9v-37.8
 		C460.5,664,464.1,660.5,468.4,660.5z"/>
 	<path class="st0" d="M500.8,675.3c-3.2,7.1-5.5,14.6-6.8,22.2h-6.7c0.9-2.3,1.9-5.2,3-8.8c-1.1,0-2.1,0-3.1,0c-0.8,0-1.5,0-2.2,0
 		c-0.8,2.8-1.5,5.8-2,8.8h-6.7c1.9-4.8,4.1-12.2,6.8-22.2h6.7c-1.3,2.8-2.4,5.7-3.4,8.7c0.7,0,1.5,0,2.3,0c1,0,2,0,3.1-0.1
@@ -220,7 +220,7 @@
 		c3.2-7.6,5.5-15.6,7.1-23.7h8.5c0.6,0.1,1.2,0.2,1.8,0.4c3.1,0.9,4.9,2.8,5.3,5.6C556.5,681.9,556.5,682.5,556.5,683.1z
 		 M550.3,683.7c0-2.4-1.1-3.6-3.2-3.6h-0.5l-3.8,12.8c0.4,0.1,0.9,0.2,1.3,0.2c1.9,0,3.5-1.1,4.7-3.4
 		C549.8,687.8,550.3,685.8,550.3,683.7z"/>
-
+</g>
 <g id="spin">
 	<path class="st4" d="M464.4,765.3h104.2c9.2,0,16.7,7.5,16.7,16.7v32.5c0,9.2-7.5,16.7-16.7,16.7H464.4c-9.2,0-16.7-7.5-16.7-16.7
 		V782C447.6,772.8,455.1,765.3,464.4,765.3z"/>
@@ -243,10 +243,10 @@
 </g>
 <path class="st1" d="M110.3,785.4h91c5.7,0,10.4,4.7,10.4,10.4v25.1c0,5.7-4.7,10.4-10.4,10.4h-91c-5.7,0-10.4-4.7-10.4-10.4v-25.1
 	C99.9,790.1,104.5,785.4,110.3,785.4z"/>
-<text id="score" transform="matrix(1 0 0 1 123.8 820.48)" class="st7 st10 st11">000</text>
+<text transform="matrix(1 0 0 1 123.8 820.48)" class="st7 st10 st11">000</text>
 <path class="st1" d="M295,785.4h91c5.7,0,10.4,4.7,10.4,10.4v25.1c0,5.7-4.7,10.4-10.4,10.4h-91c-5.7,0-10.4-4.7-10.4-10.4v-25.1
 	C284.6,790.1,289.2,785.4,295,785.4z"/>
-<text id="credit" transform="matrix(1 0 0 1 308.51 820.48)" class="st7 st10 st11">000</text>
+<text transform="matrix(1 0 0 1 308.51 820.48)" class="st7 st10 st11">000</text>
 <g class="st9">
 	<path class="st0" d="M143.1,766c0,0.5-0.2,0.9-0.5,1.3c-0.3,0.4-0.8,0.6-1.3,0.6c-0.4,0-1-0.2-1.5-0.5c0.4-0.4,0.6-0.7,0.6-1
 		c0-0.2-0.1-0.4-0.3-0.6c-0.2-0.1-0.4-0.2-0.6-0.2c-0.8,0-1.3,0.5-1.3,1.4c0,0.6,0.3,1.2,0.9,1.8l1.8,1.6c0.6,0.8,0.9,1.7,0.9,2.8
@@ -489,31 +489,31 @@
 </image>
 
 <g  class="pos"  id="group1"> 
+
 	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216" id="pos1" xlink:href="A933C438FB5808C0.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 102.9585 267.2754)">
 	</image>
 	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216" id="pos2" xlink:href="A933C438FB5808FB.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 102.9585 377.9585)">
 	</image>
 	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1204" id="pos3" xlink:href="A933C438FB5808FC.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 102.6971 488.9043)">
 	</image>
-</g>
+
+<g/>
 
 <g class="pos"  id="group2"> 
-	<image style="overflow:visible;enable-background:new    ;" width="1204" height="1216" id="pos4" xlink:href="A933C438FB5808FD.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 284.4712 267.014)">
-	</image>
-	<image style="overflow:visible;enable-background:new    ;" width="1204" height="1216" id="pos5" xlink:href="A933C438FB5808FE.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 284.4712 377.6971)">
-	</image>
-	<image style="overflow:visible;enable-background:new    ;" width="1204" height="1204"  id="pos6" xlink:href="A933C438FB5808FF.png"  transform="matrix(8.777657e-02 0 0 8.777657e-02 284.2085 488.6416)">
-	</image>
-</g>
+<image style="overflow:visible;enable-background:new    ;" width="1204" height="1216" id="pos4" xlink:href="A933C438FB5808FD.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 284.4712 267.014)">
+</image>
+<image style="overflow:visible;enable-background:new    ;" width="1204" height="1216" id="pos5" xlink:href="A933C438FB5808FE.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 284.4712 377.6971)">
+</image>
+<image style="overflow:visible;enable-background:new    ;" width="1204" height="1204"  id="pos6" xlink:href="A933C438FB5808FF.png"  transform="matrix(8.777657e-02 0 0 8.777657e-02 284.2085 488.6416)">
+</image>
+<g/>
 
 <g class="pos"  id="group3"> 
-	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216"  id="pos7" xlink:href="747B5C3C53B94753.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 462.5585 267.2754)">
-	</image>
-	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216"  id="pos8" xlink:href="747B5C3C53B94750.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 462.5585 377.9585)">
-	</image>
-	<image style="overflow:visible;enable-background:new    ;" width="1216" height="1204"  id="pos9" xlink:href="747B5C3C53B94751.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 462.2971 488.9043)">
-	</image>
-</g>
-
-
+<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216"  id="pos7" xlink:href="747B5C3C53B94753.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 462.5585 267.2754)">
+</image>
+<image style="overflow:visible;enable-background:new    ;" width="1216" height="1216"  id="pos8" xlink:href="747B5C3C53B94750.png"  transform="matrix(8.691036e-02 0 0 8.691036e-02 462.5585 377.9585)">
+</image>
+<image style="overflow:visible;enable-background:new    ;" width="1216" height="1204"  id="pos9" xlink:href="747B5C3C53B94751.png"  transform="matrix(8.734024e-02 0 0 8.734024e-02 462.2971 488.9043)">
+</image>
+<g/>
 </svg>

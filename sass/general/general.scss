@@ -16,6 +16,15 @@ button {
   color: #ffffff;
 }
 
+.uncheckedButton {
+  opacity: 0.8;
+  fill: #1a8e5f !important;
+}
+
+.st0 {
+  pointer-events: none;
+}
+
 #spin,
 #hold1,
 #hold2,
