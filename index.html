@@ -30,7 +30,7 @@
             <p>Login</p>
           </div>
           <div id="mute-btn" class="header-btn">
-            <img src="svg/mute.svg" alt="mute button" />
+            <div class="mute"></div>
           </div>
         </ul>
       </nav>
@@ -44,6 +44,11 @@
         <h2>Opret profil</h2>
 
         <div class="form-group">
+          <input type="text" name="username" required placeholder="&nbsp;" />
+          <label for="username">Angiv brugernavn</label>
+        </div>
+
+        <div class="form-group">
           <input type="text" name="email" required placeholder="&nbsp;" />
           <label for="email">E-mail</label>
         </div>
@@ -52,10 +57,7 @@
           <input type="password" name="password" required placeholder="&nbsp;" />
           <label for="password">Kodeord</label>
         </div>
-        <div class="form-group">
-          <input type="password" name="password" required placeholder="&nbsp;" />
-          <label for="password">Gentag kodeord</label>
-        </div>
+
         <div class="form-group">
           <button type="submit" class="login">Opret profil</button>
         </div>

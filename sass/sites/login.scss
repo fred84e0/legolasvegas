@@ -19,6 +19,7 @@ header a {
 
 .header-logo {
   color: var(--header-color);
+  width: 0;
 }
 
 /* Header Mobile */
@@ -150,6 +151,11 @@ header a {
     flex-direction: row;
     justify-content: space-between;
   }
+  #muteBTN {
+    height: 30px;
+    fill: white;
+    stroke: white;
+  }
 }
 
 /* Standard Header */
@@ -164,6 +170,17 @@ header a {
   cursor: pointer;
   color: white;
   box-shadow: 2px 2px 5px grey;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.header-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 10px grey;
+}
+
+.header-btn p {
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 900px) {
@@ -177,7 +194,10 @@ header a {
     color: var(--button-color);
     box-shadow: 0 0 0 0;
   }
-  #mute-btn img {
+  #muteBTN {
+    fill: var(--button-color);
+    stroke: var(--button-color);
+    height: 30px;
   }
 }
 
@@ -185,9 +205,6 @@ header a {
   width: 150px;
 }
 
-#mute-btn img {
-  height: 30px;
-}
 form h2 {
   margin: 0 auto;
   padding-bottom: 30px;
@@ -200,7 +217,7 @@ form h2 {
 
   border: 3px solid var(--button-color);
   background: white;
-  z-index: 1;
+  z-index: 100;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -295,4 +312,33 @@ form h2 {
   margin: 0 0 0 auto;
   padding: 20px;
   cursor: pointer;
+}
+
+.mute-on {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: muteon 0.8s ease-in;
+}
+
+@keyframes muteon {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+.mute-off {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  animation: muteoff 0.8s ease-in;
+}
+
+@keyframes muteoff {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }

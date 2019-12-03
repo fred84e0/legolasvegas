@@ -1,6 +1,7 @@
 import { NONAME } from "dns";
 
 // BURGERMENU
+document.addEventListener("DOMContentLoaded", start);
 
 let burgerMenu = document.querySelector("#header_menu");
 let screenWidth = window.matchMedia("(min-width: 900px)");
@@ -11,6 +12,20 @@ let win3 = "";
 
 screenWidth.addListener(screenMeasure);
 
+start();
+function start() {
+  document.querySelector("#login-btn").addEventListener("click", loginModal);
+  document.querySelector("#signup-btn").addEventListener("click", signupModal);
+  document.querySelector("#mute-btn").addEventListener("click", muteSite);
+
+  document.querySelectorAll(".close").forEach(em => {
+    em.addEventListener("click", closeModal);
+  });
+
+  document.querySelector("#burger_button").addEventListener("click", openSidebar);
+  screenMeasure(screenWidth);
+}
+
 window.addEventListener("DOMContentLoaded", event => {
   fetch("svg/slotmachine.svg")
     .then(response => response.text())
@@ -20,11 +35,17 @@ window.addEventListener("DOMContentLoaded", event => {
     });
 });
 
-start();
+window.addEventListener("DOMContentLoaded", event => {
+  fetch("svg/mute.svg")
+    .then(response => response.text())
+    .then(svg => {
+      document.querySelector(".mute").innerHTML = svg;
+    });
+});
 
-document.querySelector("#burger_button").addEventListener("click", openSidebar);
-
+// BURGERMENU
 function openSidebar() {
+  closeModal();
   console.log("Burgermenu toggled");
 
   if (!(burgerMenu.style.display == "block")) {
@@ -36,14 +57,12 @@ function openSidebar() {
       burgerMenu.style.display = "none";
     }, 590);
   }
-  burgerPil(this);
+  burgerPil();
 }
 
-function burgerPil(x) {
-  x.classList.toggle("burger_bar_open");
+function burgerPil() {
+  document.querySelector("#burger_button").classList.toggle("burger_bar_open");
 }
-
-screenMeasure(screenWidth);
 
 function screenMeasure(screenWidth) {
   if (screenWidth.matches) {
@@ -53,13 +72,6 @@ function screenMeasure(screenWidth) {
   }
 }
 
-function start() {
-  document.querySelector("#login-btn").addEventListener("click", loginModal);
-  document.querySelector("#signup-btn").addEventListener("click", signupModal);
-  document.querySelectorAll(".close").forEach(em => {
-    em.addEventListener("click", closeModal);
-  });
-}
 function loginModal() {
   const signup = document.querySelector(".signup-modal");
 
@@ -80,6 +92,7 @@ function signupModal() {
 }
 
 function closeModal() {
+  console.log("sluk");
   document.querySelector(".signup-modal").classList.remove("show-modal");
   document.querySelector(".login-modal").classList.remove("show-modal");
 }
@@ -372,3 +385,41 @@ function holdSpin3(holdOption) {
     return (win1 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 }
+function muteSite() {
+  if (document.querySelector("#sound").classList.contains("mute-on")) {
+    console.log("hej1");
+    document.querySelector("#sound").classList.remove("mute-on");
+    document.querySelector("#sound").classList.add("mute-off");
+  } else {
+    console.log("hej2");
+    document.querySelector("#sound").classList.remove("mute-off");
+    document.querySelector("#sound").classList.add("mute-on");
+  }
+}
+
+// document.querySelector("#signup-btn").addEventListener("click", openModal);
+
+// document.querySelector(".header-btn").forEach(
+//   addEventListener("click", e => {
+//     console.log(e.target.id);
+//     openModal(e.target.id);
+//   })
+// );
+
+// function openModal(btnName) {
+//   let call = btnName.split("-");
+//   const login = document.querySelector(".login-modal");
+//   const signup = document.querySelector(".signup-modal");
+
+//   if (login.classList.contains("show-modal")) {
+//     login.classList.remove("show-modal");
+//     console.log("hej");
+//   }
+//   if (signup.classList.contains("show-modal")) {
+//     signup.classList.remove("show-modal");
+//   }
+//   document.querySelector(`.${call[0]}-modal`).classList.toggle("show-modal");
+// }
+// document.querySelector(".close").forEach(em => {
+//   em.addEventListener("click", closeModal);
+// });
