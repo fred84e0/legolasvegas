@@ -212,12 +212,6 @@ form h2 {
 .login-modal,
 .signup-modal {
   display: none;
-  min-height: 500px;
-  width: 400px;
-
-  border: 3px solid var(--button-color);
-  background: white;
-  z-index: 100;
   position: absolute;
   top: 50%;
   left: 50%;

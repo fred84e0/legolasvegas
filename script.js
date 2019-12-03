@@ -53,7 +53,7 @@ function openSidebar() {
     burgerMenu.style.display = "block";
   } else {
     document.querySelector("#header_menu").classList.add("header_menu_close");
-    setTimeout(function() {
+    setTimeout(function () {
       burgerMenu.style.display = "none";
     }, 590);
   }
@@ -224,7 +224,7 @@ function fetchgif() {
   setTimeout(checkwin, 2600);
 }
 function spinOut1() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -238,7 +238,7 @@ function spinOut1() {
 }
 
 function spinOut2() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -251,7 +251,7 @@ function spinOut2() {
 }
 
 function spinOut3() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -277,7 +277,7 @@ function checkwin() {
 }
 
 function specialSpinOut1() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -291,7 +291,7 @@ function specialSpinOut1() {
 }
 
 function specialSpinOut2() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -304,7 +304,7 @@ function specialSpinOut2() {
 }
 
 function specialSpinOut3() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -317,7 +317,7 @@ function specialSpinOut3() {
 }
 
 function holdSpin1(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -328,7 +328,7 @@ function holdSpin1(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -340,7 +340,7 @@ function holdSpin1(holdOption) {
   }, 2600);
 }
 function holdSpin2(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -351,7 +351,7 @@ function holdSpin2(holdOption) {
     return (win1 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -363,7 +363,7 @@ function holdSpin2(holdOption) {
   }, 2600);
 }
 function holdSpin3(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -374,7 +374,7 @@ function holdSpin3(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -423,3 +423,97 @@ function muteSite() {
 // document.querySelector(".close").forEach(em => {
 //   em.addEventListener("click", closeModal);
 // });
+
+
+
+
+//restdb + signup/login-modal script:
+
+"use strict";
+
+function get() {
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts?q={}&h={"$orderby": {"username": 1, "password": -1}}`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(e => e.json())
+    .then(accounts => {
+      accounts.forEach(addAccountToTheDOM);
+    });
+}
+
+function addAccountToTheDOM(account) {
+  const template = document.querySelector("template").content;
+  const copy = template.cloneNode(true);
+  copy.querySelector("h3").textContent = account.username;
+  copy.querySelector("p").textContent = account.password;
+  copy.querySelector("h2").textContent = account.email;
+  copy.querySelector(".account").dataset.accountid = account._id;
+  copy.querySelector("button").addEventListener("click", () => {
+    deleteIt(account._id);
+  });
+  document.querySelector("#app").prepend(copy);
+}
+
+get();
+
+function post(data) {
+
+
+  const postData = JSON.stringify(data);
+  fetch("https://frontendeksamen2019-2ef9.restdb.io/rest/accounts", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    },
+    body: postData
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      //window.location = "";
+      addAccountToTheDOM(data);
+    });
+}
+
+function deleteIt(id) {
+  fetch("https://frontendeksamen2019-2ef9.restdb.io/rest/accounts" + id, {
+    method: "delete",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(res => res.json())
+    .then(data => {
+      document.querySelector(`.account[data-accountid="${id}"]`).remove();
+    });
+}
+
+document.querySelector("button").addEventListener("click", e => {
+  e.preventDefault();
+  const un = document.querySelector("input[name=username]").value
+  const pw = document.querySelector("input[name=password]").value
+  const em = document.querySelector("input[name=email]").value
+  post({
+    username: un,
+    password: pw,
+    email: em
+  });
+});
+
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => container.classList.add('right-panel-active'));
+
+signInButton.addEventListener('click', () => container.classList.remove('right-panel-active'));
