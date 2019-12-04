@@ -3,7 +3,7 @@ header {
   position: fixed;
   top: 0px;
   display: grid;
-  grid: auto / 5fr auto 2fr;
+  grid: auto / 5fr auto auto;
   align-items: center;
   padding: 12px 0;
   background-color: none;
@@ -15,6 +15,7 @@ header {
 
 header a {
   text-decoration: none;
+  color: var(--button-color);
 }
 
 .header-logo {
@@ -146,7 +147,7 @@ header a {
     margin-right: 20px;
   }
 
-  #header_menu ul {
+  #header_menu .outer-ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -161,6 +162,7 @@ header a {
 /* Standard Header */
 
 .header-btn {
+  margin: 0 10px;
   height: 40px;
   width: 70px;
   background: var(--button-color);
@@ -317,7 +319,7 @@ form h2 {
 .mute-on {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: muteon 0.8s ease-in;
+  animation: muteon 0.4s ease-out;
 }
 
 @keyframes muteon {
@@ -331,7 +333,7 @@ form h2 {
 .mute-off {
   stroke-dasharray: 100;
   stroke-dashoffset: 0;
-  animation: muteoff 0.8s ease-in;
+  animation: muteoff 0.4s ease-out;
 }
 
 @keyframes muteoff {
@@ -341,4 +343,11 @@ form h2 {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.win-modal {
+  background-image: url("svg/tillykke.svg");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
