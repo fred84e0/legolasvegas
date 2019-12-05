@@ -37,14 +37,17 @@
 
     <main>
       <form id="credit-form">
-        <h2>Tilføj credit</h2>
-        <div class="credit-input">
-          <h3>Indtast beløb</h3>
-
-          <input type="text" name="credit" required placeholder="&nbsp;" />
-          <label for="credit">DKK</label>
+        <img src="svg/LegolasvegasLogo.svg" alt="logo" />
+        <div class="pay-container">
+          <h2>Tilføj credit</h2>
+          <div class="credit-input">
+            <h3>Indtast beløb</h3>
+            <p>1 credit = 1 DKK</p>
+            <input type="text" name="credit" required placeholder="&nbsp;" />
+            <label for="credit">DKK</label>
+          </div>
+          <button id="credit-btn" type="submit">Indbetal</button>
         </div>
-
         <div class="payment-info">
           <div class="card-info">
             <h3>Betalingsinfo:</h3>
@@ -55,8 +58,6 @@
             <button>Opdater</button>
           </div>
         </div>
-
-        <button type="submit">Indbetal</button>
       </form>
     </main>
 

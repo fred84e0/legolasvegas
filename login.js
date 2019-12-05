@@ -343,11 +343,3 @@ function muteSite() {
 }
 
 document.querySelector(".profile-name").innerHTML = profile;
-
-// document.querySelector("#dropdown").addEventListener("mouseover", () => {
-//   document.querySelector(".options").style.display = "flex";
-//   document.querySelector(".options").classList.add("showdrop");
-// });
-// document.querySelector("#dropdown").addEventListener("mouseout", () => {
-//   document.querySelector(".options").style.display = "none";
-// });
