@@ -457,10 +457,18 @@ function muteSite() {
     console.log("hej1");
     document.querySelector("#sound").classList.remove("mute-on");
     document.querySelector("#sound").classList.add("mute-off");
+    document.querySelector("#audio_spin").muted = false;
+    document.querySelector("#audio_spin_win").muted = false;
+    document.querySelector("#audio_spin_end").muted = false;
+    console.log("page UNmuted");
   } else {
     console.log("hej2");
     document.querySelector("#sound").classList.remove("mute-off");
     document.querySelector("#sound").classList.add("mute-on");
+    document.querySelector("#audio_spin").muted = true;
+    document.querySelector("#audio_spin_win").muted = true;
+    document.querySelector("#audio_spin_end").muted = true;
+    console.log("page muted");
   }
 }
 

@@ -40,15 +40,20 @@
         <h2>Tilføj credit</h2>
         <div class="credit-input">
           <h3>Indtast beløb</h3>
+
           <input type="text" name="credit" required placeholder="&nbsp;" />
           <label for="credit">DKK</label>
         </div>
 
         <div class="payment-info">
-          <h3>Betalingsinfo</h3>
-          <p>**** **** **** *825</p>
-          <p>Ikke det rigtige kortnummer?</p>
-          <button>Opdater</button>
+          <div class="card-info">
+            <h3>Betalingsinfo:</h3>
+            <p>**** **** **** *825</p>
+          </div>
+          <div class="update-info">
+            <p>Ikke det rigtige kortnummer?</p>
+            <button>Opdater</button>
+          </div>
         </div>
 
         <button type="submit">Indbetal</button>
