@@ -56,120 +56,129 @@
 <rect x="609.5" y="209" class="st6" width="11" height="428"/>
 <rect x="54.5" y="209" class="st6" width="11" height="428"/>
 <path class="st1" d="M607.5,154.8c0-63.5-120.4-114.9-269-114.9s-269,51.4-269,114.9"/>
-<circle class="st7" cx="609" cy="185.3" r="8.8"/>
-<circle class="st8" cx="609" cy="185.3" r="3"/>
-<circle class="st7" cx="645" cy="185.3" r="8.8"/>
+<g id="allLights">
+<g id="top-light">
+<circle class="st7 light1" cx="645" cy="185.3" r="8.8"/>
 <circle class="st8" cx="645" cy="185.3" r="3"/>
-<circle class="st7" cx="567" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="609" cy="185.3" r="8.8"/>
+<circle class="st8" cx="609" cy="185.3" r="3"/>
+<circle class="st7 light1" cx="567" cy="185.3" r="8.8"/>
 <circle class="st8" cx="567" cy="185.3" r="3"/>
-<circle class="st7" cx="525" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="525" cy="185.3" r="8.8"/>
 <circle class="st8" cx="525" cy="185.3" r="3"/>
-<circle class="st7" cx="483" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="483" cy="185.3" r="8.8"/>
 <circle class="st8" cx="483" cy="185.3" r="3"/>
-<circle class="st7" cx="441" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="441" cy="185.3" r="8.8"/>
 <circle class="st8" cx="441" cy="185.3" r="3"/>
-<circle class="st7" cx="399" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="399" cy="185.3" r="8.8"/>
 <circle class="st8" cx="399" cy="185.3" r="3"/>
-<circle class="st7" cx="357" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="357" cy="185.3" r="8.8"/>
 <circle class="st8" cx="357" cy="185.3" r="3"/>
-<circle class="st7" cx="315" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="315" cy="185.3" r="8.8"/>
 <circle class="st8" cx="315" cy="185.3" r="3"/>
-<circle class="st7" cx="273" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="273" cy="185.3" r="8.8"/>
 <circle class="st8" cx="273" cy="185.3" r="3"/>
-<circle class="st7" cx="231.1" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="231.1" cy="185.3" r="8.8"/>
 <circle class="st8" cx="231.1" cy="185.3" r="2.9"/>
-<circle class="st7" cx="189.1" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="189.1" cy="185.3" r="8.8"/>
 <circle class="st8" cx="189.1" cy="185.3" r="2.9"/>
-<circle class="st7" cx="147.1" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="147.1" cy="185.3" r="8.8"/>
 <circle class="st8" cx="147.1" cy="185.3" r="2.9"/>
-<circle class="st7" cx="105.1" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="105.1" cy="185.3" r="8.8"/>
 <circle class="st8" cx="105.1" cy="185.3" r="2.9"/>
-<circle class="st7" cx="63" cy="185.3" r="8.8"/>
+<circle class="st7 light1" cx="63" cy="185.3" r="8.8"/>
 <circle class="st8" cx="63" cy="185.3" r="2.9"/>
-<circle class="st7" cx="645" cy="222.3" r="8.8"/>
-<circle class="st8" cx="645" cy="222.3" r="3"/>
-<circle class="st7" cx="645" cy="264.3" r="8.8"/>
-<circle class="st8" cx="645" cy="264.3" r="3"/>
-<circle class="st7" cx="645" cy="306.3" r="8.8"/>
-<circle class="st8" cx="645" cy="306.3" r="3"/>
-<circle class="st7" cx="645" cy="348.3" r="8.8"/>
-<circle class="st8" cx="645" cy="348.3" r="3"/>
-<circle class="st7" cx="645" cy="390.3" r="8.8"/>
-<circle class="st8" cx="645" cy="390.3" r="3"/>
-<circle class="st7" cx="645" cy="432.3" r="8.8"/>
-<circle class="st8" cx="645" cy="432.3" r="3"/>
-<circle class="st7" cx="645" cy="474.3" r="8.8"/>
-<circle class="st8" cx="645" cy="474.3" r="3"/>
-<circle class="st7" cx="645" cy="516.3" r="8.8"/>
-<circle class="st8" cx="645" cy="516.3" r="3"/>
-<circle class="st7" cx="645" cy="558.3" r="8.8"/>
-<circle class="st8" cx="645" cy="558.3" r="3"/>
-<circle class="st7" cx="645" cy="600.3" r="8.8"/>
-<circle class="st8" cx="645" cy="600.3" r="3"/>
-<circle class="st7" cx="645" cy="642.3" r="8.8"/>
-<circle class="st8" cx="645" cy="642.3" r="3"/>
-<circle class="st7" cx="645" cy="684.3" r="8.8"/>
-<circle class="st8" cx="645" cy="684.3" r="3"/>
-<circle class="st7" cx="645" cy="726.3" r="8.8"/>
-<circle class="st8" cx="645" cy="726.3" r="3"/>
-<circle class="st7" cx="645" cy="768.3" r="8.8"/>
-<circle class="st8" cx="645" cy="768.3" r="3"/>
-<circle class="st7" cx="645" cy="810.3" r="8.8"/>
-<circle class="st8" cx="645" cy="810.3" r="3"/>
-<circle class="st7" cx="29" cy="222.3" r="8.8"/>
-<circle class="st8" cx="29" cy="222.3" r="2.9"/>
-<circle class="st7" cx="29" cy="264.3" r="8.8"/>
-<circle class="st8" cx="29" cy="264.3" r="3"/>
-<circle class="st7" cx="29" cy="306.3" r="8.8"/>
-<circle class="st8" cx="29" cy="306.3" r="3"/>
-<circle class="st7" cx="29" cy="348.3" r="8.8"/>
-<circle class="st8" cx="29" cy="348.3" r="3"/>
-<circle class="st7" cx="29" cy="390.3" r="8.8"/>
-<circle class="st8" cx="29" cy="390.3" r="3"/>
-<circle class="st7" cx="29" cy="432.3" r="8.8"/>
-<circle class="st8" cx="29" cy="432.3" r="3"/>
-<circle class="st7" cx="29" cy="474.3" r="8.8"/>
-<circle class="st8" cx="29" cy="474.3" r="3"/>
-<circle class="st7" cx="29" cy="516.3" r="8.8"/>
-<circle class="st8" cx="29" cy="516.3" r="3"/>
-<circle class="st7" cx="29" cy="558.3" r="8.8"/>
-<circle class="st8" cx="29" cy="558.3" r="3"/>
-<circle class="st7" cx="29" cy="600.3" r="8.8"/>
-<circle class="st8" cx="29" cy="600.3" r="3"/>
-<circle class="st7" cx="29" cy="642.3" r="8.8"/>
-<circle class="st8" cx="29" cy="642.3" r="3"/>
-<circle class="st7" cx="29" cy="684.3" r="8.8"/>
-<circle class="st8" cx="29" cy="684.3" r="3"/>
-<circle class="st7" cx="29" cy="726.3" r="8.8"/>
-<circle class="st8" cx="29" cy="726.3" r="3"/>
-<circle class="st7" cx="29" cy="768.3" r="8.8"/>
-<circle class="st8" cx="29" cy="768.3" r="3"/>
-<circle class="st7" cx="29" cy="810.3" r="8.8"/>
-<circle class="st8" cx="29" cy="810.3" r="3"/>
-<circle class="st7" cx="29" cy="185.3" r="8.8"/>
+<circle class="st7 light2" cx="29" cy="185.3" r="8.8"/>
 <circle class="st8" cx="29" cy="185.3" r="2.9"/>
-<circle class="st7" cx="39" cy="126.5" r="8.8"/>
+<g id="right-light">
+<circle class="st7 light2" cx="645" cy="222.3" r="8.8"/>
+<circle class="st8" cx="645" cy="222.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="264.3" r="8.8"/>
+<circle class="st8" cx="645" cy="264.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="306.3" r="8.8"/>
+<circle class="st8" cx="645" cy="306.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="348.3" r="8.8"/>
+<circle class="st8" cx="645" cy="348.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="390.3" r="8.8"/>
+<circle class="st8" cx="645" cy="390.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="432.3" r="8.8"/>
+<circle class="st8" cx="645" cy="432.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="474.3" r="8.8"/>
+<circle class="st8" cx="645" cy="474.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="516.3" r="8.8"/>
+<circle class="st8" cx="645" cy="516.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="558.3" r="8.8"/>
+<circle class="st8" cx="645" cy="558.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="600.3" r="8.8"/>
+<circle class="st8" cx="645" cy="600.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="642.3" r="8.8"/>
+<circle class="st8" cx="645" cy="642.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="684.3" r="8.8"/>
+<circle class="st8" cx="645" cy="684.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="726.3" r="8.8"/>
+<circle class="st8" cx="645" cy="726.3" r="3"/>
+<circle class="st7 light1" cx="645" cy="768.3" r="8.8"/>
+<circle class="st8" cx="645" cy="768.3" r="3"/>
+<circle class="st7 light2" cx="645" cy="810.3" r="8.8"/>
+<circle class="st8" cx="645" cy="810.3" r="3"/>
+</g>
+<g id="left-light">	
+<circle class="st7 light1" cx="29" cy="222.3" r="8.8"/>
+<circle class="st8" cx="29" cy="222.3" r="2.9"/>
+<circle class="st7 light2" cx="29" cy="264.3" r="8.8"/>
+<circle class="st8" cx="29" cy="264.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="306.3" r="8.8"/>
+<circle class="st8" cx="29" cy="306.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="348.3" r="8.8"/>
+<circle class="st8" cx="29" cy="348.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="390.3" r="8.8"/>
+<circle class="st8" cx="29" cy="390.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="432.3" r="8.8"/>
+<circle class="st8" cx="29" cy="432.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="474.3" r="8.8"/>
+<circle class="st8" cx="29" cy="474.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="516.3" r="8.8"/>
+<circle class="st8" cx="29" cy="516.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="558.3" r="8.8"/>
+<circle class="st8" cx="29" cy="558.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="600.3" r="8.8"/>
+<circle class="st8" cx="29" cy="600.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="642.3" r="8.8"/>
+<circle class="st8" cx="29" cy="642.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="684.3" r="8.8"/>
+<circle class="st8" cx="29" cy="684.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="726.3" r="8.8"/>
+<circle class="st8" cx="29" cy="726.3" r="3"/>
+<circle class="st7 light2" cx="29" cy="768.3" r="8.8"/>
+<circle class="st8" cx="29" cy="768.3" r="3"/>
+<circle class="st7 light1" cx="29" cy="810.3" r="8.8"/>
+<circle class="st8" cx="29" cy="810.3" r="3"/>
+</g>
+<g id="bow-light">
+<circle class="st7 light1" cx="39" cy="126.5" r="8.8"/>
 <circle class="st8" cx="39" cy="126.5" r="2.9"/>
-<circle class="st7" cx="82.1" cy="80.3" r="8.8"/>
+<circle class="st7 light2" cx="82.1" cy="80.3" r="8.8"/>
 <circle class="st8" cx="82.1" cy="80.3" r="2.9"/>
-<circle class="st7" cx="139.1" cy="49.3" r="8.8"/>
+<circle class="st7 light1" cx="139.1" cy="49.3" r="8.8"/>
 <circle class="st8" cx="139.1" cy="49.3" r="2.9"/>
-<circle class="st7" cx="197.1" cy="28.3" r="8.8"/>
+<circle class="st7 light2" cx="197.1" cy="28.3" r="8.8"/>
 <circle class="st8" cx="197.1" cy="28.3" r="2.9"/>
-<ellipse transform="matrix(0.7423 -0.6701 0.6701 0.7423 57.2766 179.5064)" class="st7" cx="262" cy="15.3" rx="8.8" ry="8.8"/>
+<ellipse transform="matrix(0.7423 -0.6701 0.6701 0.7423 57.2766 179.5064)" class="st7 light1" cx="262" cy="15.3" rx="8.8" ry="8.8"/>
 <circle class="st8" cx="262" cy="15.3" r="3"/>
-<circle class="st7" cx="337" cy="11.3" r="8.8"/>
+<circle class="st7 light2" cx="337" cy="11.3" r="8.8"/>
 <circle class="st8" cx="337" cy="11.3" r="3"/>
-<circle class="st7" cx="407" cy="14.3" r="8.8"/>
+<circle class="st7 light1" cx="407" cy="14.3" r="8.8"/>
 <circle class="st8" cx="407" cy="14.3" r="3"/>
-<circle class="st7" cx="473.3" cy="26.3" r="8.8"/>
+<circle class="st7 light2" cx="473.3" cy="26.3" r="8.8"/>
 <circle class="st8" cx="473.3" cy="26.3" r="3"/>
-<circle class="st7" cx="538" cy="50.3" r="8.8"/>
+<circle class="st7 light1" cx="538" cy="50.3" r="8.8"/>
 <circle class="st8" cx="538" cy="50.3" r="3"/>
-<circle class="st7" cx="592" cy="80.3" r="8.8"/>
+<circle class="st7 light2" cx="592" cy="80.3" r="8.8"/>
 <circle class="st8" cx="592" cy="80.3" r="3"/>
-<circle class="st7" cx="633" cy="124.3" r="8.8"/>
+<circle class="st7 light1" cx="633" cy="124.3" r="8.8"/>
 <circle class="st8" cx="633" cy="124.3" r="3"/>
+</g>
+</g>
 
 	<path  id="hold1" class="st4 hold" d="M107.8,660.5h96.1c4.4,0,7.9,3.5,7.9,7.9v37.8c0,4.4-3.5,7.9-7.9,7.9h-96.1c-4.4,0-7.9-3.5-7.9-7.9v-37.8
 		C99.9,664,103.4,660.5,107.8,660.5z"/>

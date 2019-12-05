@@ -14,7 +14,7 @@ let win3 = "";
 
 screenWidth.addListener(screenMeasure);
 
-start();
+// start();
 function start() {
   document.querySelector("#login-btn").addEventListener("click", loginModal);
   document.querySelector("#signup-btn").addEventListener("click", signupModal);
@@ -34,8 +34,32 @@ window.addEventListener("DOMContentLoaded", event => {
     .then(svg => {
       document.querySelector("#slotmachine").innerHTML = svg;
       loadgif();
+      gameLights();
     });
 });
+function gameLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    console.log("gamelights");
+    q.classList.remove("winBlink");
+    setTimeout(function() {
+      q.classList.add("blink");
+    }, 300);
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("winBlink");
+    q.classList.add("blink");
+  });
+}
+function winLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+}
 
 window.addEventListener("DOMContentLoaded", event => {
   fetch("svg/mute.svg")
@@ -171,7 +195,6 @@ function fetchgif() {
   document.querySelector("#audio_spin").play();
 
   credit.textContent--;
-
   let allPos = document.querySelectorAll(".pos");
 
   allPos.forEach(pos => {
@@ -320,6 +343,11 @@ function checkwin() {
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
     }
+    console.log("you've won");
+    winLights();
+    setTimeout(function() {
+      gameLights();
+    }, 2800);
   } else {
     console.log("you didnt win");
   }

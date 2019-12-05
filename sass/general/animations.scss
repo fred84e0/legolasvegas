@@ -19,3 +19,40 @@
 .bounce_in {
   animation: bounce_in 0.2s ease-in-out 1;
 }
+
+.blink {
+  animation: light_blink 0.6s ease-in-out infinite;
+}
+@keyframes light_blink {
+  50% {
+    stroke: rgb(211, 211, 150);
+    stroke-opacity: 50%;
+    stroke-width: 20px;
+  }
+  50% {
+    stroke: rgb(211, 211, 150);
+    stroke-opacity: 70%;
+    stroke-width: 20px;
+  }
+
+  100% {
+  }
+}
+.winBlink {
+  animation: winLight_blink 0.3s ease-in-out 10;
+}
+@keyframes winLight_blink {
+  50% {
+    stroke: rgb(211, 211, 150);
+    stroke-opacity: 50%;
+    stroke-width: 20px;
+  }
+  70% {
+    stroke: rgb(211, 211, 150);
+    stroke-opacity: 70%;
+    stroke-width: 20px;
+  }
+
+  100% {
+  }
+}
