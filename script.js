@@ -12,7 +12,7 @@ let win3 = "";
 
 screenWidth.addListener(screenMeasure);
 
-start();
+// start();
 function start() {
   document.querySelector("#login-btn").addEventListener("click", loginModal);
   document.querySelector("#signup-btn").addEventListener("click", signupModal);
@@ -32,8 +32,32 @@ window.addEventListener("DOMContentLoaded", event => {
     .then(svg => {
       document.querySelector("#slotmachine").innerHTML = svg;
       loadgif();
+      gameLights();
+      // winLights();
     });
 });
+function gameLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("blink");
+    setTimeout(function() {
+      q.classList.add("blink");
+    }, 300);
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("blink");
+  });
+}
+function winLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("winBlink");
+    q.classList.add("winBlink");
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("winBlink");
+    q.classList.add("winBlink");
+  });
+}
 
 window.addEventListener("DOMContentLoaded", event => {
   fetch("svg/mute.svg")
