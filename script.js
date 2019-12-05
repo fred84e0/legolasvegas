@@ -332,18 +332,33 @@ function checkwin() {
       document.querySelector("#score").innerHTML = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
+      document.querySelector(".signup-modal").classList.add("right-panel-active");
+      document.querySelector(".close").style.display = "none";
+
+      document.querySelector(".signup-modal").style.display = "block";
+      document.querySelector("#spin").style.pointerEvents = "none";
     }
     if (win1 == "svg/5.svg") {
       console.log("you've won 100 points");
       document.querySelector("#score").innerHTML = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
+      document.querySelector(".signup-modal").classList.add("right-panel-active");
+      document.querySelector(".close").style.display = "none";
+
+      document.querySelector(".signup-modal").style.display = "block";
+      document.querySelector("#spin").style.pointerEvents = "none";
     }
     if (win1 == "svg/9.svg") {
       console.log("you've won 150 points");
       document.querySelector("#score").innerHTML = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
+      document.querySelector(".signup-modal").classList.add("right-panel-active");
+      document.querySelector(".close").style.display = "none";
+
+      document.querySelector(".signup-modal").style.display = "block";
+      document.querySelector("#spin").style.pointerEvents = "none";
     }
     console.log("you've won");
     winLights();
