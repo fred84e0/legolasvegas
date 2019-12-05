@@ -31,7 +31,7 @@
           </button>
 
           <ul class="options">
-            <li><a href="#">Edit profile</a></li>
+            <li class="edit_profile_button">Edit profile</li>
             <li><a href="credit.html">Get credit</a></li>
             <li><a href="index.html" class="logout">Logout</a></li>
           </ul>
@@ -50,6 +50,18 @@
     <div id="slotmachine"></div>
 
     <img src="img/light.png" alt="" class="light_overlay" />
+
+    <div class="edit_profile">
+      <form action="">
+        <p class="username">Name</p>
+        <input type="text" id="username" name="username" placeholder="Name" required />
+        <p class="mail">E-mail</p>
+        <input type="email" id="email" name="email" placeholder="E-mail" required />
+        <p class="password">Password</p>
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <button class="edit_button">Edit</button>
+      </form>
+    </div>
 
     <audio id="audio_spin">
       <source src="music/spin.mp3" type="audio/mpeg" />

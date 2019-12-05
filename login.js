@@ -2,11 +2,11 @@ import { NONAME } from "dns";
 
 // BURGERMENU
 
-let profile = ["Johnny bravo den tredje"];
-
 let win1 = "";
 let win2 = "";
 let win3 = "";
+
+let identity = localStorage.getItem("identity");
 
 start();
 function start() {
@@ -342,8 +342,6 @@ function muteSite() {
   }
 }
 
-document.querySelector(".profile-name").innerHTML = profile;
-
 // document.querySelector("#dropdown").addEventListener("mouseover", () => {
 //   document.querySelector(".options").style.display = "flex";
 //   document.querySelector(".options").classList.add("showdrop");
@@ -351,3 +349,61 @@ document.querySelector(".profile-name").innerHTML = profile;
 // document.querySelector("#dropdown").addEventListener("mouseout", () => {
 //   document.querySelector(".options").style.display = "none";
 // });
+
+get();
+
+function get() {
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts?q={"_id": "${identity}"}`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(e => e.json())
+    .then(accounts => {
+      accounts.forEach(addAccountToTheDOM);
+    });
+}
+
+function addAccountToTheDOM(account) {
+  document.querySelector(".profile-name").innerHTML = account.username;
+  document.querySelector(".username").innerHTML = account.username;
+  document.querySelector(".mail").innerHTML = account.email;
+  document.querySelector(".password").innerHTML = account.password;
+}
+
+document.querySelector(".edit_profile_button").addEventListener("click", openEditProfile);
+
+function openEditProfile() {
+  document.querySelector(".edit_profile").style.display = "block";
+
+  document.querySelector(".edit_button").addEventListener("click", e => {
+    e.preventDefault();
+    const un = document.querySelector("input[name=username]").value;
+    const pw = document.querySelector("input[name=password]").value;
+    const em = document.querySelector("input[name=email]").value;
+    editProfile({
+      username: un,
+      password: pw,
+      email: em
+    });
+  });
+}
+
+function editProfile(editData) {
+  let postData = JSON.stringify(editData);
+
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts/${identity}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    },
+    body: postData
+  })
+    .then(d => d.json())
+    .then(t => console.log(t));
+}
