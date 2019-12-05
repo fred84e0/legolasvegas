@@ -10,6 +10,8 @@ let win1 = "";
 let win2 = "";
 let win3 = "";
 
+// const audio_spin = new Audio("music/spin.mp3");
+
 screenWidth.addListener(screenMeasure);
 
 start();
@@ -99,6 +101,8 @@ function closeModal() {
 
 function loadgif() {
   let credit = document.querySelector("#credit");
+  let score = document.querySelector("#score");
+  score.innerHTML = 0;
   credit.textContent = 3;
 
   document.querySelector("#pos1").setAttribute("xlink:href", "svg/5.svg");
@@ -124,25 +128,48 @@ function loadgif() {
 }
 
 function holdOption() {
-  document.querySelector("#hold1").addEventListener("click", () => {
-    console.log("checked");
+  document.querySelector("#hold1").addEventListener("click", addEventListeners);
 
-    document.querySelector("#group1").classList.toggle("checked");
-    document.querySelector("#hold1").classList.toggle("uncheckedButton");
-  });
+  document.querySelector("#hold2").addEventListener("click", addEventListeners);
 
-  document.querySelector("#hold2").addEventListener("click", () => {
-    document.querySelector("#group2").classList.toggle("checked");
-    document.querySelector("#hold2").classList.toggle("uncheckedButton");
-  });
+  document.querySelector("#hold3").addEventListener("click", addEventListeners);
+}
 
-  document.querySelector("#hold3").addEventListener("click", () => {
-    document.querySelector("#group3").classList.toggle("checked");
-    document.querySelector("#hold3").classList.toggle("uncheckedButton");
-  });
+function addEventListeners() {
+  let identifier = event.target.id.slice(4, 5);
+  if (document.querySelector(`#hold${identifier}`).classList.contains("on")) {
+    document.querySelector(`#hold1`).classList.remove("on");
+    document.querySelector(`#hold2`).classList.remove("on");
+    document.querySelector(`#hold3`).classList.remove("on");
+    document.querySelector(`#group1`).classList.remove("checked");
+    document.querySelector(`#group2`).classList.remove("checked");
+    document.querySelector(`#group3`).classList.remove("checked");
+    document.querySelector(`#hold1`).classList.add("uncheckedButton");
+    document.querySelector(`#hold2`).classList.add("uncheckedButton");
+    document.querySelector(`#hold3`).classList.add("uncheckedButton");
+  } else if (document.querySelector(`#hold1`).classList.contains("on") || document.querySelector(`#hold2`).classList.contains("on") || document.querySelector(`#hold3`).classList.contains("on")) {
+    alert("You can only hold once in the trial. Sign up for the full LegolasVegas experience!");
+
+    document.querySelector(`#hold1`).classList.remove("on");
+    document.querySelector(`#hold2`).classList.remove("on");
+    document.querySelector(`#hold3`).classList.remove("on");
+    document.querySelector(`#group1`).classList.remove("checked");
+    document.querySelector(`#group2`).classList.remove("checked");
+    document.querySelector(`#group3`).classList.remove("checked");
+    document.querySelector(`#hold1`).classList.add("uncheckedButton");
+    document.querySelector(`#hold2`).classList.add("uncheckedButton");
+    document.querySelector(`#hold3`).classList.add("uncheckedButton");
+  } else {
+    document.querySelector(`#hold${identifier}`).classList.add("on");
+    document.querySelector(`#group${identifier}`).classList.add("checked");
+    document.querySelector(`#hold${identifier}`).classList.remove("uncheckedButton");
+  }
 }
 
 function fetchgif() {
+  document.querySelector("#spin").style.pointerEvents = "none";
+  document.querySelector("#audio_spin").play();
+
   credit.textContent--;
 
   let allPos = document.querySelectorAll(".pos");
@@ -232,6 +259,8 @@ function spinOut1() {
     document.querySelector("#pos1").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos2").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos3").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
 
     return (win1 = document.querySelector("#pos2").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
@@ -246,6 +275,9 @@ function spinOut2() {
     document.querySelector("#pos4").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos5").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos6").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
+
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 }
@@ -259,17 +291,35 @@ function spinOut3() {
     document.querySelector("#pos7").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos8").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos9").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
+
     return (win3 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2600);
 }
 
 function checkwin() {
-  console.log(win1);
-  console.log(win2);
-  console.log(win3);
+  document.querySelector("#spin").style.pointerEvents = "auto";
 
   if (win1 == win2 && win2 == win3 && win3 == win1) {
-    console.log("you've won");
+    if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
+      console.log("you've won 50 points");
+      document.querySelector("#score").innerHTML = "50";
+      document.querySelector("#audio_spin_win").play();
+      document.querySelector("#audio_spin_win").currentTime = 0;
+    }
+    if (win1 == "svg/5.svg") {
+      console.log("you've won 100 points");
+      document.querySelector("#score").innerHTML = "100";
+      document.querySelector("#audio_spin_win").play();
+      document.querySelector("#audio_spin_win").currentTime = 0;
+    }
+    if (win1 == "svg/9.svg") {
+      console.log("you've won 150 points");
+      document.querySelector("#score").innerHTML = "150";
+      document.querySelector("#audio_spin_win").play();
+      document.querySelector("#audio_spin_win").currentTime = 0;
+    }
   } else {
     console.log("you didnt win");
   }
@@ -285,7 +335,8 @@ function specialSpinOut1() {
     document.querySelector("#pos1").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos2").setAttribute("xlink:href", `svg/5.svg`);
     document.querySelector("#pos3").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
-
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win1 = document.querySelector("#pos2").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 }
@@ -299,6 +350,8 @@ function specialSpinOut2() {
     document.querySelector("#pos4").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos5").setAttribute("xlink:href", `svg/5.svg`);
     document.querySelector("#pos6").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 }
@@ -312,6 +365,8 @@ function specialSpinOut3() {
     document.querySelector("#pos7").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos8").setAttribute("xlink:href", `svg/5.svg`);
     document.querySelector("#pos9").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win3 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2600);
 }
@@ -325,6 +380,8 @@ function holdSpin1(holdOption) {
     document.querySelector("#pos4").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos5").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos6").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
@@ -336,6 +393,8 @@ function holdSpin1(holdOption) {
     document.querySelector("#pos7").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos8").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos9").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win3 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2600);
 }
@@ -348,6 +407,8 @@ function holdSpin2(holdOption) {
     document.querySelector("#pos1").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos2").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos3").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win1 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 
@@ -359,6 +420,8 @@ function holdSpin2(holdOption) {
     document.querySelector("#pos7").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos8").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos9").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win3 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2600);
 }
@@ -371,6 +434,8 @@ function holdSpin3(holdOption) {
     document.querySelector("#pos4").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos5").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos6").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
@@ -382,6 +447,8 @@ function holdSpin3(holdOption) {
     document.querySelector("#pos1").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
     document.querySelector("#pos2").setAttribute("xlink:href", `${holdOption}`);
     document.querySelector("#pos3").setAttribute("xlink:href", `svg/${Math.floor(Math.random() * 9 + 1)}.svg`);
+    document.querySelector("#audio_spin_end").play();
+    document.querySelector("#audio_spin_end").currentTime = 0;
     return (win1 = document.querySelector("#pos8").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 }
