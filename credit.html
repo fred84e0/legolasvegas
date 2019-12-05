@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="robots" content="noindex" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Legolasvegas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+
     <link rel="stylesheet" href="styles.scss" />
   </head>
-
   <body>
-    <!-- Standard Header -->
     <header>
       <a class="header-logo" href="index.html">
         <img id="header_logo" src="svg/LegolasvegasLogo.svg" alt="header logo" />
       </a>
 
-      <!-- <nav id="header_menu"> -->
-      <ul class="outer-ul">
+      <ul class="outer-ul credit-header">
         <div id="dropdown">
           <button>
             <div id="profile">
@@ -31,24 +28,33 @@
 
           <ul class="options">
             <li><a href="#">Edit profile</a></li>
-            <li><a href="credit.html">Get credit</a></li>
+            <li><a href="login.html">Go Back</a></li>
             <li><a href="index.html" class="logout">Logout</a></li>
           </ul>
         </div>
-
-        <div id="mute-btn" class="header-btn">
-          <div class="mute"></div>
-        </div>
       </ul>
-      <!-- </nav> -->
     </header>
-    <!-- Standard Header -->
 
-    <img src="img/legolas" alt="" class="legolas" />
-    <img src="img/arwen" alt="" class="arwen" />
-    <div id="slotmachine"></div>
+    <main>
+      <form id="credit-form">
+        <h2>Tilføj credit</h2>
+        <div class="credit-input">
+          <h3>Indtast beløb</h3>
+          <input type="text" name="credit" required placeholder="&nbsp;" />
+          <label for="credit">DKK</label>
+        </div>
 
-    <img src="img/light.png" alt="" class="light_overlay" />
+        <div class="payment-info">
+          <h3>Betalingsinfo</h3>
+          <p>**** **** **** *825</p>
+          <p>Ikke det rigtige kortnummer?</p>
+          <button>Opdater</button>
+        </div>
+
+        <button type="submit">Indbetal</button>
+      </form>
+    </main>
+
     <script src="login.js"></script>
   </body>
 </html>

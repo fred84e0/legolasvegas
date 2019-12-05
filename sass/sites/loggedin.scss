@@ -3,7 +3,7 @@
 }
 
 #profile {
-  min-width: 100px;
+  min-width: 150px;
   display: grid;
   grid: auto / 1fr auto;
   justify-content: space-between;
@@ -46,12 +46,12 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 250px;
+  height: 200px;
   padding-top: 10px;
   top: 25px;
   background: white;
   list-style: none;
-  border-radius: 5px;
+
   z-index: -1;
   opacity: 0;
 
@@ -69,13 +69,11 @@
   cursor: pointer;
 }
 
-.options li:nth-child(3) {
-  background-color: rgb(255, 96, 96);
-  border-radius: 0 0 5px 5px;
+.logout {
+  color: rgb(255, 96, 96);
 }
-.options li:nth-child(3):hover {
-  background-color: rgb(253, 76, 76);
-  border-radius: 0 0 5px 5px;
+.logout:hover {
+  color: rgb(201, 53, 53);
 }
 .options li:hover {
   background-color: whitesmoke;
@@ -101,9 +99,6 @@
   margin: 15px;
 }
 
-#credit {
-  margin: 0 auto;
-  width: 300px;
-  height: 500px;
-  background-color: red;
+.outer-ul {
+  display: flex;
 }
