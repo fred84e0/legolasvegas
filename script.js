@@ -33,28 +33,28 @@ window.addEventListener("DOMContentLoaded", event => {
       document.querySelector("#slotmachine").innerHTML = svg;
       loadgif();
       gameLights();
-      // winLights();
     });
 });
 function gameLights() {
   document.querySelectorAll(".light1").forEach(q => {
-    q.classList.remove("blink");
+    console.log("gamelights");
+    q.classList.remove("winBlink");
     setTimeout(function() {
       q.classList.add("blink");
     }, 300);
   });
   document.querySelectorAll(".light2").forEach(q => {
-    q.classList.remove("blink");
+    q.classList.remove("winBlink");
     q.classList.add("blink");
   });
 }
 function winLights() {
   document.querySelectorAll(".light1").forEach(q => {
-    q.classList.remove("winBlink");
+    q.classList.remove("blink");
     q.classList.add("winBlink");
   });
   document.querySelectorAll(".light2").forEach(q => {
-    q.classList.remove("winBlink");
+    q.classList.remove("blink");
     q.classList.add("winBlink");
   });
 }
@@ -168,7 +168,6 @@ function holdOption() {
 
 function fetchgif() {
   credit.textContent--;
-
   let allPos = document.querySelectorAll(".pos");
 
   allPos.forEach(pos => {
@@ -294,6 +293,10 @@ function checkwin() {
 
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     console.log("you've won");
+    winLights();
+    setTimeout(function() {
+      gameLights();
+    }, 2800);
   } else {
     console.log("you didnt win");
   }
