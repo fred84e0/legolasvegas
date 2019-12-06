@@ -70,3 +70,12 @@
     height: 80vh;
   }
 }
+
+#winner-credit {
+  border: 2px solid black;
+  background: transparent;
+  font-size: 20px;
+  margin: 0 auto;
+  width: 70px;
+  pointer-events: none;
+}

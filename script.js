@@ -330,6 +330,7 @@ function checkwin() {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
       console.log("you've won 50 points");
       document.querySelector("#score").innerHTML = "50";
+      document.querySelector("#winner-credit").value = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
       document.querySelector(".signup-modal").classList.add("right-panel-active");
@@ -341,6 +342,7 @@ function checkwin() {
     if (win1 == "svg/5.svg") {
       console.log("you've won 100 points");
       document.querySelector("#score").innerHTML = "100";
+      document.querySelector("#winner-credit").value = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
       document.querySelector(".signup-modal").classList.add("right-panel-active");
@@ -352,6 +354,7 @@ function checkwin() {
     if (win1 == "svg/9.svg") {
       console.log("you've won 150 points");
       document.querySelector("#score").innerHTML = "150";
+      document.querySelector("#winner-credit").value = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
       document.querySelector(".signup-modal").classList.add("right-panel-active");
@@ -570,10 +573,12 @@ document.querySelector("button").addEventListener("click", e => {
   const un = document.querySelector("input[name=username]").value;
   const pw = document.querySelector("input[name=password]").value;
   const em = document.querySelector("input[name=email]").value;
+  const wc = document.querySelector("input[name=win-credit]").value;
   post({
     username: un,
     password: pw,
-    email: em
+    email: em,
+    credit: wc
   });
 });
 
