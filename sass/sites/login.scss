@@ -302,12 +302,14 @@ form h2 {
 .close {
   width: 20px;
   height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0 auto;
+  position: fixed;
+  top: 0px;
+  right: 10px;
   padding: 20px;
   cursor: pointer;
+  z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 1s;
 }
 
 .mute-on {
@@ -346,16 +348,61 @@ form h2 {
   background-size: contain;
 }
 .edit_profile {
-  height: 200px;
-  width: 200px;
+  width: 400px;
+  height: 490px;
+  text-align: center;
   background: white;
-  display: none;
 
   position: absolute;
-  padding: 30px;
 
   top: 50%;
   left: 50%;
 
   transform: translate(-50%, -50%);
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 5px;
+  h2 {
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right, #5c1182, #7f429e);
+    color: white;
+  }
+
+  input {
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px black solid;
+  }
+}
+
+.winner_title {
+  color: #5c1182;
+}
+
+.edit_button {
+  padding: 10px 20px;
+}
+
+.button_wrapper {
+  width: 100%;
+}
+
+.close_edit_profile {
+  position: fixed;
+  right: 20px;
+  top: 17px;
+  color: white;
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  z-index: 100;
 }

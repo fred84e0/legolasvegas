@@ -101,7 +101,10 @@ function screenMeasure(screenWidth) {
 }
 
 function loginModal() {
+  document.querySelector(".signup-modal").classList.remove("right-panel-active");
+
   const signup = document.querySelector(".signup-modal");
+  document.querySelector(".close").style.color = "#ffffff";
 
   if (signup.classList.contains("show-modal")) {
     signup.classList.remove("show-modal");
@@ -112,10 +115,13 @@ function loginModal() {
 
 function signupModal() {
   const login = document.querySelector(".login-modal");
+  document.querySelector(".close").style.color = "#5c1182";
 
   if (login.classList.contains("show-modal")) {
     login.classList.remove("show-modal");
   }
+  document.querySelector(".signup-modal").classList.add("right-panel-active");
+
   document.querySelector(".signup-modal").classList.toggle("show-modal");
 }
 
@@ -325,41 +331,41 @@ function spinOut3() {
 
 function checkwin() {
   document.querySelector("#spin").style.pointerEvents = "auto";
+  let score = "";
 
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
-      console.log("you've won 50 points");
-      document.querySelector("#score").innerHTML = "50";
+      score = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-      document.querySelector(".signup-modal").classList.add("right-panel-active");
-      document.querySelector(".close").style.display = "none";
 
-      document.querySelector(".signup-modal").style.display = "block";
       document.querySelector("#spin").style.pointerEvents = "none";
+
+      setTimeout(function() {
+        callToAction(score);
+      }, 1000);
     }
     if (win1 == "svg/5.svg") {
-      console.log("you've won 100 points");
-      document.querySelector("#score").innerHTML = "100";
+      score = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-      document.querySelector(".signup-modal").classList.add("right-panel-active");
-      document.querySelector(".close").style.display = "none";
 
-      document.querySelector(".signup-modal").style.display = "block";
       document.querySelector("#spin").style.pointerEvents = "none";
+      setTimeout(function() {
+        callToAction(score);
+      }, 1000);
     }
     if (win1 == "svg/9.svg") {
-      console.log("you've won 150 points");
-      document.querySelector("#score").innerHTML = "150";
+      score = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-      document.querySelector(".signup-modal").classList.add("right-panel-active");
-      document.querySelector(".close").style.display = "none";
 
-      document.querySelector(".signup-modal").style.display = "block";
       document.querySelector("#spin").style.pointerEvents = "none";
+      setTimeout(function() {
+        callToAction(score);
+      }, 1000);
     }
+
     console.log("you've won");
     winLights();
     setTimeout(function() {
@@ -369,6 +375,16 @@ function checkwin() {
     console.log("you didnt win");
   }
   holdOption();
+}
+
+function callToAction(score) {
+  document.querySelector("#score").innerHTML = score;
+  document.querySelector(".close").style.display = "none";
+
+  document.querySelector(".signup-modal").style.display = "block";
+  document.querySelector(".signup-modal").classList.add("right-panel-active");
+  document.querySelector(".winner_title").textContent = "Wow du er heldig!!";
+  document.querySelector(".winner_description").textContent = `Du har lige vundet ${score} credits! Opret en profil og gør krav på dem med det samme!`;
 }
 
 function specialSpinOut1() {
@@ -517,35 +533,6 @@ function muteSite() {
   }
 }
 
-// document.querySelector("#signup-btn").addEventListener("click", openModal);
-
-// document.querySelector(".header-btn").forEach(
-//   addEventListener("click", e => {
-//     console.log(e.target.id);
-//     openModal(e.target.id);
-//   })
-// );
-
-// function openModal(btnName) {
-//   let call = btnName.split("-");
-//   const login = document.querySelector(".login-modal");
-//   const signup = document.querySelector(".signup-modal");
-
-//   if (login.classList.contains("show-modal")) {
-//     login.classList.remove("show-modal");
-//     console.log("hej");
-//   }
-//   if (signup.classList.contains("show-modal")) {
-//     signup.classList.remove("show-modal");
-//   }
-//   document.querySelector(`.${call[0]}-modal`).classList.toggle("show-modal");
-// }
-// document.querySelector(".close").forEach(em => {
-//   em.addEventListener("click", closeModal);
-// });
-
-//restdb + signup/login-modal script:
-
 function post(data) {
   const postData = JSON.stringify(data);
   fetch("https://frontendeksamen2019-2ef9.restdb.io/rest/accounts", {
@@ -561,6 +548,7 @@ function post(data) {
     .then(data => {
       console.log(data);
       localStorage.setItem("identity", data._id);
+      localStorage.setItem("credit", document.querySelector("#score").textContent);
       window.location.href = "login.html";
     });
 }
@@ -570,10 +558,13 @@ document.querySelector("button").addEventListener("click", e => {
   const un = document.querySelector("input[name=username]").value;
   const pw = document.querySelector("input[name=password]").value;
   const em = document.querySelector("input[name=email]").value;
+  const cr = document.querySelector("#score").textContent;
+
   post({
     username: un,
     password: pw,
-    email: em
+    email: em,
+    credit: cr
   });
 });
 
@@ -581,6 +572,29 @@ const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
 
-signUpButton.addEventListener("click", () => container.classList.add("right-panel-active"));
+signInButton.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
+  document.querySelector(".close").style.color = "#ffffff";
+});
 
-signInButton.addEventListener("click", () => container.classList.remove("right-panel-active"));
+signUpButton.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
+  document.querySelector(".close").style.color = "#5c1182";
+});
+
+document.querySelector(".sign_in_button").addEventListener("click", e => {
+  e.preventDefault();
+
+  localStorage.setItem("yourEmail", document.querySelector("input[name=yourEmail]").value);
+  localStorage.setItem("yourPassword", document.querySelector("input[name=yourPassword]").value);
+
+  checkUser();
+});
+
+function checkUser() {
+  if (document.querySelector("input[name=yourEmail]").value == "fake@user.com" && document.querySelector("input[name=yourPassword]").value == "fake123") {
+    window.location.href = "login.html";
+  } else {
+    alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
+  }
+}
