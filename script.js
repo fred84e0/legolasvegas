@@ -582,15 +582,6 @@ signUpButton.addEventListener("click", () => {
   document.querySelector(".close").style.color = "#5c1182";
 });
 
-document.querySelector(".sign_in_button").addEventListener("click", e => {
-  e.preventDefault();
-
-  localStorage.setItem("yourEmail", document.querySelector("input[name=yourEmail]").value);
-  localStorage.setItem("yourPassword", document.querySelector("input[name=yourPassword]").value);
-
-  checkUser();
-});
-
 function checkUser() {
   if (document.querySelector("input[name=yourEmail]").value == "fake@user.com" && document.querySelector("input[name=yourPassword]").value == "fake123") {
     window.location.href = "login.html";

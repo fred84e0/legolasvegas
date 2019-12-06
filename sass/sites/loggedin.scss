@@ -79,10 +79,11 @@
   background-color: whitesmoke;
 }
 
-#dropdown button:focus + .options {
+#dropdown button:hover + .options,
+.options {
   opacity: 1;
   transform: translateY(10px);
-  pointer-events: all;
+  pointer-events: auto;
 }
 .icon:after {
   display: inline-block;

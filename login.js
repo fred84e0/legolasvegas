@@ -266,7 +266,7 @@ function muteSite() {
 get();
 
 function get() {
-  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts?q={"_id": "${identity}"}`, {
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts/${identity}`, {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
@@ -276,7 +276,7 @@ function get() {
   })
     .then(e => e.json())
     .then(accounts => {
-      accounts.forEach(addAccountToTheDOM);
+      addAccountToTheDOM(accounts);
     });
 }
 
@@ -337,9 +337,9 @@ document.querySelector(".close_edit_profile").addEventListener("click", () => {
 document.querySelector(".submit_payment").addEventListener("click", e => {
   e.preventDefault();
 
-  var num1 = Number(document.querySelector("#credit").textContent);
-  var num2 = Number(document.querySelector("input[name=credit]").value);
-  var sum = num1 + num2;
+  let num1 = Number(document.querySelector("#credit").textContent);
+  let num2 = Number(document.querySelector("input[name=credit]").value);
+  let sum = num1 + num2;
 
   document.querySelector("#credit").textContent = sum;
   document.querySelector("#credit-form").style.display = "none";
