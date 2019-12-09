@@ -82,7 +82,6 @@
 #dropdown button:focus + .options {
   opacity: 1;
   transform: translateY(10px);
-  pointer-events: all;
 }
 .icon:after {
   display: inline-block;
@@ -101,4 +100,13 @@
 
 .outer-ul {
   display: flex;
+}
+
+#cashout {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  right: 10vw;
+  top: 20vw;
 }

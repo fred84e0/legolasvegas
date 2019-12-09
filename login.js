@@ -15,6 +15,8 @@ function start() {
   document.querySelectorAll(".close").forEach(em => {
     em.addEventListener("click", closeModal);
   });
+
+  dropDown();
 }
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -104,41 +106,47 @@ function addEventListeners() {
 }
 
 function fetchgif() {
-  credit.textContent -= "10";
-  document.querySelector("#audio_spin").play();
+  if (Number(document.querySelector("#credit").textContent) <= 0) {
+    console.log("no credz");
 
-  let allPos = document.querySelectorAll(".pos");
+    alert("Du har ikke nok credit til at spille videre!");
+  } else {
+    credit.textContent -= "10";
+    document.querySelector("#audio_spin").play();
 
-  allPos.forEach(pos => {
-    pos.classList.remove("bounce_in");
-  });
+    let allPos = document.querySelectorAll(".pos");
 
-  if (document.querySelector("#hold1").classList.contains("uncheckedButton")) {
-    document.querySelector("#group1").style.opacity = "0";
-    document.querySelector("#image1").style.opacity = "1";
-    document.querySelector("#image1").setAttribute("xlink:href", "svg/spin1.gif");
+    allPos.forEach(pos => {
+      pos.classList.remove("bounce_in");
+    });
 
-    spinOut1();
+    if (document.querySelector("#hold1").classList.contains("uncheckedButton")) {
+      document.querySelector("#group1").style.opacity = "0";
+      document.querySelector("#image1").style.opacity = "1";
+      document.querySelector("#image1").setAttribute("xlink:href", "svg/spin1.gif");
+
+      spinOut1();
+    }
+
+    if (document.querySelector("#hold2").classList.contains("uncheckedButton")) {
+      document.querySelector("#group2").style.opacity = "0";
+      document.querySelector("#image2").style.opacity = "1";
+      document.querySelector("#image2").setAttribute("xlink:href", "svg/spin2.gif");
+
+      spinOut2();
+    }
+
+    if (document.querySelector("#hold3").classList.contains("uncheckedButton")) {
+      document.querySelector("#group3").style.opacity = "0";
+
+      document.querySelector("#image3").style.opacity = "1";
+      document.querySelector("#image3").setAttribute("xlink:href", "svg/spin3.gif");
+
+      spinOut3();
+    }
+
+    setTimeout(checkwin, 2600);
   }
-
-  if (document.querySelector("#hold2").classList.contains("uncheckedButton")) {
-    document.querySelector("#group2").style.opacity = "0";
-    document.querySelector("#image2").style.opacity = "1";
-    document.querySelector("#image2").setAttribute("xlink:href", "svg/spin2.gif");
-
-    spinOut2();
-  }
-
-  if (document.querySelector("#hold3").classList.contains("uncheckedButton")) {
-    document.querySelector("#group3").style.opacity = "0";
-
-    document.querySelector("#image3").style.opacity = "1";
-    document.querySelector("#image3").setAttribute("xlink:href", "svg/spin3.gif");
-
-    spinOut3();
-  }
-
-  setTimeout(checkwin, 2600);
 }
 function spinOut1() {
   setTimeout(function() {
@@ -191,48 +199,56 @@ function checkwin() {
   console.log(win2);
   console.log(win3);
 
+  let winning;
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
-      document.querySelector("#score").textContent += "50";
+      // document.querySelector("#score").textContent += "50";
+      winning = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
 
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
+      // setTimeout(function() {
+      //   callToAction(score);
+      // }, 1000);
     }
     if (win1 == "svg/5.svg") {
-      document.querySelector("#score").textContent += "100";
+      // document.querySelector("#score").textContent += "100";
+      winning = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
+      // setTimeout(function() {
+      //   callToAction(score);
+      // }, 1000);
     }
     if (win1 == "svg/9.svg") {
-      document.querySelector("#score").textContent += "150";
+      // document.querySelector("#score").textContent += "150";
+      winning = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
+      // setTimeout(function() {
+      //   callToAction(score);
+      // }, 1000);
     }
 
     console.log("you've won");
-    winLights();
-    setTimeout(function() {
-      gameLights();
-    }, 2800);
+    getScore(winning);
+
+    // winLights();
+    // setTimeout(function() {
+    //   gameLights();
+    // }, 2800);
   } else {
     console.log("you didnt win");
   }
   holdOption();
+
+  console.log(credit);
 }
 
 function muteSite() {
@@ -266,7 +282,7 @@ function muteSite() {
 get();
 
 function get() {
-  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts?q={"_id": "${identity}"}`, {
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts/${identity}`, {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
@@ -276,7 +292,7 @@ function get() {
   })
     .then(e => e.json())
     .then(accounts => {
-      accounts.forEach(addAccountToTheDOM);
+      addAccountToTheDOM(accounts);
     });
 }
 
@@ -298,12 +314,13 @@ function openEditProfile() {
     const un = document.querySelector("input[name=username]").value;
     const pw = document.querySelector("input[name=password]").value;
     const em = document.querySelector("input[name=email]").value;
-    const cr = document.querySelector("#score").textContent;
+    const cr = Number(document.querySelector("#credit").textContent);
+    console.log(cr);
     editProfile({
       username: un,
       password: pw,
       email: em,
-      email: cr
+      credit: cr
     });
   });
 }
@@ -337,10 +354,47 @@ document.querySelector(".close_edit_profile").addEventListener("click", () => {
 document.querySelector(".submit_payment").addEventListener("click", e => {
   e.preventDefault();
 
-  var num1 = Number(document.querySelector("#credit").textContent);
-  var num2 = Number(document.querySelector("input[name=credit]").value);
-  var sum = num1 + num2;
+  let num1 = Number(document.querySelector("#credit").textContent);
+  let num2 = Number(document.querySelector("input[name=credit]").value);
+  let sum = num1 + num2;
 
   document.querySelector("#credit").textContent = sum;
   document.querySelector("#credit-form").style.display = "none";
 });
+
+function dropDown() {
+  const button = document.querySelector("#dropdown button");
+  const options = document.querySelector(".options");
+
+  console.log(button);
+  if (button) console.log("johhny");
+}
+
+function getScore(winning) {
+  console.log(winning);
+
+  let winnings = Number(winning);
+  let currentScore = Number(document.querySelector("#score").textContent);
+  console.log(currentScore);
+  console.log(winnings);
+
+  let newScore = winnings + currentScore;
+
+  console.log(newScore);
+  document.querySelector("#score").textContent = newScore;
+  // document.querySelector("#cashout").addEventListener("click", cashOut(newScore));
+  document.querySelector("#cashout").addEventListener("click", e => {
+    console.log("hej", newScore);
+
+    let conversion = newScore * 4;
+
+    let credits = Number(document.querySelector("#credit").textContent);
+
+    let cashCredits = credits + conversion;
+
+    console.log(cashCredits);
+
+    document.querySelector("#credit").textContent = cashCredits;
+    document.querySelector("#score").textContent = 0;
+  });
+}

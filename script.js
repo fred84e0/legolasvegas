@@ -336,6 +336,7 @@ function checkwin() {
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
       score = "50";
+
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
@@ -380,7 +381,6 @@ function checkwin() {
 function callToAction(score) {
   document.querySelector("#score").innerHTML = score;
   document.querySelector(".close").style.display = "none";
-
   document.querySelector(".signup-modal").style.display = "block";
   document.querySelector(".signup-modal").classList.add("right-panel-active");
   document.querySelector(".winner_title").textContent = "Wow du er heldig!!";
