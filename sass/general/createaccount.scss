@@ -36,8 +36,7 @@
 .container button {
   font-family: "Ubuntu", sans-serif;
   border-radius: 20px;
-  border: 1px solid #9e66b9;
-  background-color: #9e66b9;
+  border: 1px solid;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -46,6 +45,17 @@
   outline: none;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+.sign_in_button{
+  background-color: #FFB100 !important;
+  border: none !important;
+}
+
+.sign_up_button{
+  background-color: #9C141E !important;
+  border: none !important;
 }
 
 .container button:active {
@@ -114,6 +124,10 @@
   z-index: 1;
 }
 
+.signup-modal{
+	z-index: 600;
+}
+
 .container.right-panel-active .sign-up-container {
   transform: translateX(100%);
   opacity: 1;
@@ -160,8 +174,8 @@
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #5c1182, #9e66b9);
-  background: linear-gradient(to right, #5c1182, #9e66b9);
+  background: -webkit-linear-gradient(to right, #9C141E, #FFB100);
+  background: linear-gradient(to right, #9C141E, #FFB100);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

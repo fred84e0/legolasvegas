@@ -11,7 +11,7 @@
   width: 100vw;
   object-fit: cover;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 #slotmachine {
@@ -20,6 +20,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 500;
 
   svg {
     height: 100%;
@@ -57,6 +58,7 @@
   .arwen {
     display: block;
     position: absolute;
+    z-index: 550;
   }
   .legolas {
     right: 75vw;
@@ -71,7 +73,7 @@
   }
 }
 #qMark {
-  z-index: 20;
+  z-index: 700;
   height: 25px;
   position: absolute;
   right: 15px;
@@ -92,6 +94,7 @@
   position: absolute;
   right: 25px;
   bottom: 45px;
+  z-index: 700;
 }
 
 .infoBox img {

@@ -43,7 +43,7 @@ function gameLights() {
   document.querySelectorAll(".light1").forEach(q => {
     console.log("gamelights");
     q.classList.remove("winBlink");
-    setTimeout(function() {
+    setTimeout(function () {
       q.classList.add("blink");
     }, 300);
   });
@@ -81,7 +81,7 @@ function openSidebar() {
     burgerMenu.style.display = "block";
   } else {
     document.querySelector("#header_menu").classList.add("header_menu_close");
-    setTimeout(function() {
+    setTimeout(function () {
       burgerMenu.style.display = "none";
     }, 590);
   }
@@ -282,7 +282,7 @@ function fetchgif() {
   setTimeout(checkwin, 2600);
 }
 function spinOut1() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -298,7 +298,7 @@ function spinOut1() {
 }
 
 function spinOut2() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -314,7 +314,7 @@ function spinOut2() {
 }
 
 function spinOut3() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -340,7 +340,7 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
+      setTimeout(function () {
         callToAction(score);
       }, 1000);
     }
@@ -350,7 +350,7 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
+      setTimeout(function () {
         callToAction(score);
       }, 1000);
     }
@@ -360,14 +360,14 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
+      setTimeout(function () {
         callToAction(score);
       }, 1000);
     }
 
     console.log("you've won");
     winLights();
-    setTimeout(function() {
+    setTimeout(function () {
       gameLights();
     }, 2800);
   } else {
@@ -387,7 +387,7 @@ function callToAction(score) {
 }
 
 function specialSpinOut1() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -402,7 +402,7 @@ function specialSpinOut1() {
 }
 
 function specialSpinOut2() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -417,7 +417,7 @@ function specialSpinOut2() {
 }
 
 function specialSpinOut3() {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -432,7 +432,7 @@ function specialSpinOut3() {
 }
 
 function holdSpin1(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -445,7 +445,7 @@ function holdSpin1(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -459,7 +459,7 @@ function holdSpin1(holdOption) {
   }, 2600);
 }
 function holdSpin2(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -472,7 +472,7 @@ function holdSpin2(holdOption) {
     return (win1 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -486,7 +486,7 @@ function holdSpin2(holdOption) {
   }, 2600);
 }
 function holdSpin3(holdOption) {
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -499,7 +499,7 @@ function holdSpin3(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -597,8 +597,8 @@ function checkUser() {
     alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
   }
 }
-document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
 document.querySelector("#qMark").addEventListener("mouseover", openInfo);
+document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
 function openInfo() {
   console.log("info");
   document.querySelector(".infoBox").classList.remove("info_close");
@@ -608,7 +608,7 @@ function openInfo() {
 function closeInfoBox() {
   document.querySelector(".infoBox").classList.remove("info_open");
   document.querySelector(".infoBox").classList.add("info_close");
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector(".infoBox").style.display = "none";
   }, 500);
 }
