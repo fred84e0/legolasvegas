@@ -106,10 +106,12 @@ function addEventListeners() {
 }
 
 function fetchgif() {
-  if (Number(document.querySelector("#credit").textContent) <= 0) {
+  document.querySelector("#spin").style.pointerEvents = "none";
+  if (Number(document.querySelector("#credit").textContent) <= 9) {
     console.log("no credz");
 
     alert("Du har ikke nok credit til at spille videre!");
+    document.querySelector("#spin").style.pointerEvents = "auto";
   } else {
     credit.textContent -= "10";
     document.querySelector("#audio_spin").play();
@@ -195,6 +197,7 @@ function spinOut3() {
 }
 
 function checkwin() {
+  document.querySelector("#spin").style.pointerEvents = "auto";
   console.log(win1);
   console.log(win2);
   console.log(win3);
@@ -202,51 +205,29 @@ function checkwin() {
   let winning;
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
-      // document.querySelector("#score").textContent += "50";
       winning = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-
-      // setTimeout(function() {
-      //   callToAction(score);
-      // }, 1000);
     }
     if (win1 == "svg/5.svg") {
-      // document.querySelector("#score").textContent += "100";
       winning = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-      // setTimeout(function() {
-      //   callToAction(score);
-      // }, 1000);
     }
     if (win1 == "svg/9.svg") {
-      // document.querySelector("#score").textContent += "150";
       winning = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-      // setTimeout(function() {
-      //   callToAction(score);
-      // }, 1000);
     }
 
     console.log("you've won");
     getScore(winning);
-
-    // winLights();
-    // setTimeout(function() {
-    //   gameLights();
-    // }, 2800);
   } else {
     console.log("you didnt win");
   }
   holdOption();
+
+  updateCredit();
 
   console.log(credit);
 }
@@ -271,14 +252,6 @@ function muteSite() {
   }
 }
 
-// document.querySelector("#dropdown").addEventListener("mouseover", () => {
-//   document.querySelector(".options").style.display = "flex";
-//   document.querySelector(".options").classList.add("showdrop");
-// });
-// document.querySelector("#dropdown").addEventListener("mouseout", () => {
-//   document.querySelector(".options").style.display = "none";
-// });
-
 get();
 
 function get() {
@@ -298,9 +271,9 @@ function get() {
 
 function addAccountToTheDOM(account) {
   document.querySelector(".profile-name").innerHTML = account.username;
-  document.querySelector(".username").innerHTML = "username: " + account.username;
-  document.querySelector(".mail").innerHTML = "email: " + account.email;
-  document.querySelector(".password").innerHTML = "password: " + account.password;
+  document.querySelector(".username").innerHTML = "Brugernavn: " + account.username;
+  document.querySelector(".mail").innerHTML = "E-mail: " + account.email;
+  document.querySelector(".password").innerHTML = "Password: " + account.password;
   document.querySelector("#credit").innerHTML = account.credit;
 }
 
@@ -360,14 +333,15 @@ document.querySelector(".submit_payment").addEventListener("click", e => {
 
   document.querySelector("#credit").textContent = sum;
   document.querySelector("#credit-form").style.display = "none";
+
+  credit2DB({
+    credit: sum
+  });
 });
 
 function dropDown() {
   const button = document.querySelector("#dropdown button");
   const options = document.querySelector(".options");
-
-  console.log(button);
-  if (button) console.log("johhny");
 }
 
 function getScore(winning) {
@@ -382,8 +356,8 @@ function getScore(winning) {
 
   console.log(newScore);
   document.querySelector("#score").textContent = newScore;
-  // document.querySelector("#cashout").addEventListener("click", cashOut(newScore));
-  document.querySelector("#cashout").addEventListener("click", e => {
+
+  document.querySelector(".cashout").addEventListener("click", e => {
     console.log("hej", newScore);
 
     let conversion = newScore * 4;
@@ -396,5 +370,35 @@ function getScore(winning) {
 
     document.querySelector("#credit").textContent = cashCredits;
     document.querySelector("#score").textContent = 0;
+    newScore = 0;
+
+    updateCredit();
   });
+}
+
+function updateCredit() {
+  let cr = document.querySelector("#credit").textContent;
+
+  credit2DB({
+    credit: cr
+  });
+
+  console.log("sender til database");
+}
+
+function credit2DB(editData) {
+  console.log(editData);
+  let postData = JSON.stringify(editData);
+
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts/${identity}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    },
+    body: postData
+  })
+    .then(d => d.json())
+    .then(t => console.log(t));
 }
