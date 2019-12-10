@@ -47,12 +47,44 @@
     stroke-opacity: 50%;
     stroke-width: 20px;
   }
-  70% {
+  50% {
     stroke: rgb(211, 211, 150);
     stroke-opacity: 70%;
     stroke-width: 20px;
   }
 
   100% {
+  }
+}
+
+.info_open {
+  animation-name: info_slide;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes info_slide {
+  0% {
+    opacity: 0;
+    transform: translatey(-5vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+.info_close {
+  animation-name: info_close;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes info_close {
+  0% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translatey(-6vw);
   }
 }

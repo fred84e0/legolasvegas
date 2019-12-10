@@ -340,7 +340,6 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-
       setTimeout(function() {
         callToAction(score);
       }, 1000);
@@ -597,4 +596,19 @@ function checkUser() {
   } else {
     alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
   }
+}
+document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
+document.querySelector("#qMark").addEventListener("mouseover", openInfo);
+function openInfo() {
+  console.log("info");
+  document.querySelector(".infoBox").classList.remove("info_close");
+  document.querySelector(".infoBox").classList.add("info_open");
+  document.querySelector(".infoBox").style.display = "grid";
+}
+function closeInfoBox() {
+  document.querySelector(".infoBox").classList.remove("info_open");
+  document.querySelector(".infoBox").classList.add("info_close");
+  setTimeout(function() {
+    document.querySelector(".infoBox").style.display = "none";
+  }, 500);
 }

@@ -23,8 +23,32 @@ window.addEventListener("DOMContentLoaded", event => {
     .then(svg => {
       document.querySelector("#slotmachine").innerHTML = svg;
       loadgif();
+      gameLights();
     });
 });
+function gameLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    console.log("gamelights");
+    q.classList.remove("winBlink");
+    setTimeout(function() {
+      q.classList.add("blink");
+    }, 300);
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("winBlink");
+    q.classList.add("blink");
+  });
+}
+function winLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+}
 
 window.addEventListener("DOMContentLoaded", event => {
   fetch("svg/mute.svg")
