@@ -9,7 +9,7 @@ header {
   background-color: none;
   width: 100%;
   height: 90px;
-  z-index: 2;
+  z-index: 600;
   transition: 0.3s;
 }
 
@@ -46,6 +46,10 @@ header a {
     animation-name: slideout !important;
     animation-duration: 0.6s;
     animation-timing-function: ease-in-out;
+  }
+
+  .header-logo{
+    display: none;
   }
 
   #header_menu ul {
@@ -92,6 +96,7 @@ header a {
     z-index: 3;
     border-radius: 15px;
     cursor: pointer;
+    z-index: 600;
   }
 
   .bar1,
@@ -99,24 +104,25 @@ header a {
   .bar3 {
     width: 40px;
     height: 6px;
-    background-color: var(--button-color);
+    background-color: #FFB100;
     margin: 6px 0;
     transition: 0.4s;
+    z-index: 600;
   }
 
   .burger_bar_open .bar1 {
-    background-color: var(--button-color);
+    background-color: #FFB100;
     transform: rotate(405deg);
     width: 30px;
     margin-left: 12px;
   }
 
   .burger_bar_open .bar2 {
-    background-color: var(--button-color);
+    background-color: #FFB100;
   }
 
   .burger_bar_open .bar3 {
-    background-color: var(--button-color);
+    background-color: #FFB100;
     transform: rotate(-405deg);
     width: 30px;
     margin-left: 12px;
@@ -137,6 +143,7 @@ header a {
     width: 180px;
     margin-left: 20px;
     transition: 0.4s;
+    display: block;
   }
   #header_logo:hover {
     margin-left: 20px;
@@ -165,20 +172,18 @@ header a {
   margin: 0 10px;
   height: 40px;
   width: 70px;
-  background: var(--button-color);
+  background: #007219;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   color: white;
-  box-shadow: 2px 2px 5px grey;
   border-radius: 5px;
   transition: 0.5s;
 }
 
 .header-btn:hover {
   transform: scale(1.05);
-  box-shadow: 2px 2px 10px grey;
 }
 
 .header-btn p {
@@ -193,12 +198,12 @@ header a {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    color: var(--button-color);
-    box-shadow: 0 0 0 0;
+    color: #FFB100;
+
   }
   #muteBTN {
-    fill: var(--button-color);
-    stroke: var(--button-color);
+    fill: #FFB100;
+    stroke: #FFB100;
     height: 30px;
   }
 }
@@ -296,7 +301,6 @@ form h2 {
   color: #aeafb1;
   transform: scale(1.02);
   cursor: pointer;
-  box-shadow: 2px 2px 5px darkgrey;
 }
 
 .close {
