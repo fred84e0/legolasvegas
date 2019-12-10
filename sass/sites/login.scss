@@ -406,3 +406,29 @@ form h2 {
   cursor: pointer;
   z-index: 100;
 }
+
+.welcome {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  left: 50%;
+  margin-left: -200px;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: var(--button-color);
+  border-radius: 5px;
+}
+
+.welcome h1 {
+  text-align: center;
+}
+
+.welcome button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+}

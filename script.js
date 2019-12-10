@@ -598,3 +598,7 @@ function checkUser() {
     alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
   }
 }
+
+document.querySelector(".welcome button").addEventListener("click", e => {
+  document.querySelector(".welcome").style.display = "none";
+});
