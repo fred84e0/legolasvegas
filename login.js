@@ -15,6 +15,8 @@ function start() {
   document.querySelectorAll(".close").forEach(em => {
     em.addEventListener("click", closeModal);
   });
+  gameLights();
+  dropDown();
 }
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -25,6 +27,29 @@ window.addEventListener("DOMContentLoaded", event => {
       loadgif();
     });
 });
+function gameLights() {
+  console.log("gamelights");
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("winBlink");
+    setTimeout(function() {
+      q.classList.add("blink");
+    }, 300);
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("winBlink");
+    q.classList.add("blink");
+  });
+}
+function winLights() {
+  document.querySelectorAll(".light1").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+  document.querySelectorAll(".light2").forEach(q => {
+    q.classList.remove("blink");
+    q.classList.add("winBlink");
+  });
+}
 
 window.addEventListener("DOMContentLoaded", event => {
   fetch("svg/mute.svg")
@@ -108,39 +133,48 @@ function fetchgif() {
 
   credit.textContent -= "10";
   document.querySelector("#audio_spin").play();
+  if (Number(document.querySelector("#credit").textContent) <= 9) {
+    console.log("no credz");
 
-  let allPos = document.querySelectorAll(".pos");
+    alert("Du har ikke nok credit til at spille videre!");
+    document.querySelector("#spin").style.pointerEvents = "auto";
+  } else {
+    credit.textContent -= "10";
+    document.querySelector("#audio_spin").play();
 
-  allPos.forEach(pos => {
-    pos.classList.remove("bounce_in");
-  });
+    let allPos = document.querySelectorAll(".pos");
 
-  if (document.querySelector("#hold1").classList.contains("uncheckedButton")) {
-    document.querySelector("#group1").style.opacity = "0";
-    document.querySelector("#image1").style.opacity = "1";
-    document.querySelector("#image1").setAttribute("xlink:href", "svg/spin1.gif");
+    allPos.forEach(pos => {
+      pos.classList.remove("bounce_in");
+    });
 
-    spinOut1();
+    if (document.querySelector("#hold1").classList.contains("uncheckedButton")) {
+      document.querySelector("#group1").style.opacity = "0";
+      document.querySelector("#image1").style.opacity = "1";
+      document.querySelector("#image1").setAttribute("xlink:href", "svg/spin1.gif");
+
+      spinOut1();
+    }
+
+    if (document.querySelector("#hold2").classList.contains("uncheckedButton")) {
+      document.querySelector("#group2").style.opacity = "0";
+      document.querySelector("#image2").style.opacity = "1";
+      document.querySelector("#image2").setAttribute("xlink:href", "svg/spin2.gif");
+
+      spinOut2();
+    }
+
+    if (document.querySelector("#hold3").classList.contains("uncheckedButton")) {
+      document.querySelector("#group3").style.opacity = "0";
+
+      document.querySelector("#image3").style.opacity = "1";
+      document.querySelector("#image3").setAttribute("xlink:href", "svg/spin3.gif");
+
+      spinOut3();
+    }
+
+    setTimeout(checkwin, 2600);
   }
-
-  if (document.querySelector("#hold2").classList.contains("uncheckedButton")) {
-    document.querySelector("#group2").style.opacity = "0";
-    document.querySelector("#image2").style.opacity = "1";
-    document.querySelector("#image2").setAttribute("xlink:href", "svg/spin2.gif");
-
-    spinOut2();
-  }
-
-  if (document.querySelector("#hold3").classList.contains("uncheckedButton")) {
-    document.querySelector("#group3").style.opacity = "0";
-
-    document.querySelector("#image3").style.opacity = "1";
-    document.querySelector("#image3").setAttribute("xlink:href", "svg/spin3.gif");
-
-    spinOut3();
-  }
-
-  setTimeout(checkwin, 2600);
 }
 function spinOut1() {
   setTimeout(function() {
@@ -189,55 +223,44 @@ function spinOut3() {
 }
 
 function checkwin() {
+  document.querySelector("#spin").style.pointerEvents = "auto";
   console.log(win1);
   console.log(win2);
   console.log(win3);
 
-  document.querySelector("#spin").style.pointerEvents = "auto";
-
+  let winning;
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
-      document.querySelector("#score").textContent += "50";
+      winning = "50";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
     }
     if (win1 == "svg/5.svg") {
-      document.querySelector("#score").textContent += "100";
+      winning = "100";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
     }
     if (win1 == "svg/9.svg") {
-      document.querySelector("#score").textContent += "150";
+      winning = "150";
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
-
-      document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function() {
-        callToAction(score);
-      }, 1000);
     }
 
     console.log("you've won");
+    getScore(winning);
     winLights();
-    setTimeout(function() {
-      gameLights();
-    }, 2800);
   } else {
     console.log("you didnt win");
   }
 
   holdOption();
+
+  updateCredit();
+  setTimeout(function() {
+    gameLights();
+  }, 2800);
+
+  console.log(credit);
 }
 
 function muteSite() {
@@ -260,14 +283,6 @@ function muteSite() {
   }
 }
 
-// document.querySelector("#dropdown").addEventListener("mouseover", () => {
-//   document.querySelector(".options").style.display = "flex";
-//   document.querySelector(".options").classList.add("showdrop");
-// });
-// document.querySelector("#dropdown").addEventListener("mouseout", () => {
-//   document.querySelector(".options").style.display = "none";
-// });
-
 get();
 
 function get() {
@@ -287,9 +302,9 @@ function get() {
 
 function addAccountToTheDOM(account) {
   document.querySelector(".profile-name").innerHTML = account.username;
-  document.querySelector(".username").innerHTML = "username: " + account.username;
-  document.querySelector(".mail").innerHTML = "email: " + account.email;
-  document.querySelector(".password").innerHTML = "password: " + account.password;
+  document.querySelector(".username").innerHTML = "Brugernavn: " + account.username;
+  document.querySelector(".mail").innerHTML = "E-mail: " + account.email;
+  document.querySelector(".password").innerHTML = "Password: " + account.password;
   document.querySelector("#credit").innerHTML = account.credit;
 }
 
@@ -303,12 +318,13 @@ function openEditProfile() {
     const un = document.querySelector("input[name=username]").value;
     const pw = document.querySelector("input[name=password]").value;
     const em = document.querySelector("input[name=email]").value;
-    const cr = document.querySelector("#score").textContent;
+    const cr = Number(document.querySelector("#credit").textContent);
+    console.log(cr);
     editProfile({
       username: un,
       password: pw,
       email: em,
-      email: cr
+      credit: cr
     });
   });
 }
@@ -348,4 +364,72 @@ document.querySelector(".submit_payment").addEventListener("click", e => {
 
   document.querySelector("#credit").textContent = sum;
   document.querySelector("#credit-form").style.display = "none";
+
+  credit2DB({
+    credit: sum
+  });
 });
+
+function dropDown() {
+  const button = document.querySelector("#dropdown button");
+  const options = document.querySelector(".options");
+}
+
+function getScore(winning) {
+  console.log(winning);
+
+  let winnings = Number(winning);
+  let currentScore = Number(document.querySelector("#score").textContent);
+  console.log(currentScore);
+  console.log(winnings);
+
+  let newScore = winnings + currentScore;
+
+  console.log(newScore);
+  document.querySelector("#score").textContent = newScore;
+
+  document.querySelector(".cashout").addEventListener("click", e => {
+    console.log("hej", newScore);
+
+    let conversion = newScore * 4;
+
+    let credits = Number(document.querySelector("#credit").textContent);
+
+    let cashCredits = credits + conversion;
+
+    console.log(cashCredits);
+
+    document.querySelector("#credit").textContent = cashCredits;
+    document.querySelector("#score").textContent = 0;
+    newScore = 0;
+
+    updateCredit();
+  });
+}
+
+function updateCredit() {
+  let cr = document.querySelector("#credit").textContent;
+
+  credit2DB({
+    credit: cr
+  });
+
+  console.log("sender til database");
+}
+
+function credit2DB(editData) {
+  console.log(editData);
+  let postData = JSON.stringify(editData);
+
+  fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts/${identity}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5de0eb264658275ac9dc207c",
+      "cache-control": "no-cache"
+    },
+    body: postData
+  })
+    .then(d => d.json())
+    .then(t => console.log(t));
+}

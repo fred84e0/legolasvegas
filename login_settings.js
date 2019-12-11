@@ -1,5 +1,6 @@
 let accounts = [];
 document.querySelector(".sign_in_button").addEventListener("click", e => {
+  console.log("test");
   e.preventDefault();
 
   let yourEmail = document.querySelector("input[name=yourEmail]").value;
@@ -25,11 +26,17 @@ function checkID(yourEmail) {
       let emailIndex = accounts.findIndex(x => x.email === localStorage.getItem("yourEmail"));
       let passwordIndex = accounts.findIndex(x => x.password === localStorage.getItem("yourPassword"));
 
+      console.log(passwordIndex);
+      console.log(emailIndex);
+
+      if (emailIndex == "-1" && passwordIndex == "-1") {
+        alert("Forkert kodeord - Prøv venligst igen.");
+      }
       if (emailIndex === passwordIndex) {
         localStorage.setItem("identity", accounts[emailIndex]._id);
         window.location.href = "login.html";
       } else {
-        alert("Wrong password");
+        alert("Forkert kodeord - Prøv venligst igen.");
       }
     });
 }

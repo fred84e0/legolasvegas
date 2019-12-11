@@ -336,11 +336,11 @@ function checkwin() {
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
       score = "50";
+
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-
       setTimeout(function() {
         callToAction(score);
       }, 1000);
@@ -380,7 +380,6 @@ function checkwin() {
 function callToAction(score) {
   document.querySelector("#score").innerHTML = score;
   document.querySelector(".close").style.display = "none";
-
   document.querySelector(".signup-modal").style.display = "block";
   document.querySelector(".signup-modal").classList.add("right-panel-active");
   document.querySelector(".winner_title").textContent = "Wow du er heldig!!";
@@ -589,3 +588,23 @@ function checkUser() {
     alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
   }
 }
+document.querySelector("#qMark").addEventListener("mouseover", openInfo);
+document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
+function openInfo() {
+  console.log("info");
+  document.querySelector(".infoBox").classList.remove("info_close");
+  document.querySelector(".infoBox").classList.add("info_open");
+  document.querySelector(".infoBox").style.display = "grid";
+}
+function closeInfoBox() {
+  document.querySelector(".infoBox").classList.remove("info_open");
+  document.querySelector(".infoBox").classList.add("info_close");
+  setTimeout(function() {
+    document.querySelector(".infoBox").style.display = "none";
+  }, 500);
+}
+
+document.querySelector(".welcome-btn").addEventListener("click", e => {
+  e.preventDefault();
+  document.querySelector(".welcome").style.display = "none";
+});
