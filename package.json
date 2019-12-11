@@ -24,7 +24,8 @@
     "sass": "^1.23.7"
   },
   "dependencies": {
-    "svg": "^0.1.0"
+    "svg": "^0.1.0",
+    "tailwindcss": "^1.1.4"
   },
   "staticFiles": {
     "staticPath": "static",

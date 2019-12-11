@@ -104,6 +104,8 @@ function addEventListeners() {
 }
 
 function fetchgif() {
+  document.querySelector("#spin").style.pointerEvents = "none";
+
   credit.textContent -= "10";
   document.querySelector("#audio_spin").play();
 
@@ -191,6 +193,8 @@ function checkwin() {
   console.log(win2);
   console.log(win3);
 
+  document.querySelector("#spin").style.pointerEvents = "auto";
+
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
       document.querySelector("#score").textContent += "50";
@@ -232,6 +236,7 @@ function checkwin() {
   } else {
     console.log("you didnt win");
   }
+
   holdOption();
 }
 
