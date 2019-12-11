@@ -43,7 +43,7 @@ function gameLights() {
   document.querySelectorAll(".light1").forEach(q => {
     console.log("gamelights");
     q.classList.remove("winBlink");
-    setTimeout(function () {
+    setTimeout(function() {
       q.classList.add("blink");
     }, 300);
   });
@@ -81,7 +81,7 @@ function openSidebar() {
     burgerMenu.style.display = "block";
   } else {
     document.querySelector("#header_menu").classList.add("header_menu_close");
-    setTimeout(function () {
+    setTimeout(function() {
       burgerMenu.style.display = "none";
     }, 590);
   }
@@ -282,7 +282,7 @@ function fetchgif() {
   setTimeout(checkwin, 2600);
 }
 function spinOut1() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -298,7 +298,7 @@ function spinOut1() {
 }
 
 function spinOut2() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -314,7 +314,7 @@ function spinOut2() {
 }
 
 function spinOut3() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -336,11 +336,12 @@ function checkwin() {
   if (win1 == win2 && win2 == win3 && win3 == win1) {
     if (win1 == "svg/1.svg" || win1 == "svg/2.svg" || win1 == "svg/3.svg" || win1 == "svg/4.svg" || win1 == "svg/6.svg" || win1 == "svg/7.svg" || win1 == "svg/8.svg") {
       score = "50";
+
       document.querySelector("#audio_spin_win").play();
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function () {
+      setTimeout(function() {
         callToAction(score);
       }, 1000);
     }
@@ -350,7 +351,7 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function () {
+      setTimeout(function() {
         callToAction(score);
       }, 1000);
     }
@@ -360,14 +361,14 @@ function checkwin() {
       document.querySelector("#audio_spin_win").currentTime = 0;
 
       document.querySelector("#spin").style.pointerEvents = "none";
-      setTimeout(function () {
+      setTimeout(function() {
         callToAction(score);
       }, 1000);
     }
 
     console.log("you've won");
     winLights();
-    setTimeout(function () {
+    setTimeout(function() {
       gameLights();
     }, 2800);
   } else {
@@ -379,7 +380,6 @@ function checkwin() {
 function callToAction(score) {
   document.querySelector("#score").innerHTML = score;
   document.querySelector(".close").style.display = "none";
-
   document.querySelector(".signup-modal").style.display = "block";
   document.querySelector(".signup-modal").classList.add("right-panel-active");
   document.querySelector(".winner_title").textContent = "Wow du er heldig!!";
@@ -387,7 +387,7 @@ function callToAction(score) {
 }
 
 function specialSpinOut1() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -402,7 +402,7 @@ function specialSpinOut1() {
 }
 
 function specialSpinOut2() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -417,7 +417,7 @@ function specialSpinOut2() {
 }
 
 function specialSpinOut3() {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -432,7 +432,7 @@ function specialSpinOut3() {
 }
 
 function holdSpin1(holdOption) {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -445,7 +445,7 @@ function holdSpin1(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -459,7 +459,7 @@ function holdSpin1(holdOption) {
   }, 2600);
 }
 function holdSpin2(holdOption) {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -472,7 +472,7 @@ function holdSpin2(holdOption) {
     return (win1 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 1800);
 
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image3").style.opacity = "0";
     document.querySelector("#group3").style.opacity = "1";
     document.querySelector("#group3").classList.add("bounce_in");
@@ -486,7 +486,7 @@ function holdSpin2(holdOption) {
   }, 2600);
 }
 function holdSpin3(holdOption) {
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image2").style.opacity = "0";
     document.querySelector("#group2").style.opacity = "1";
     document.querySelector("#group2").classList.add("bounce_in");
@@ -499,7 +499,7 @@ function holdSpin3(holdOption) {
     return (win2 = document.querySelector("#pos5").getAttributeNS("http://www.w3.org/1999/xlink", "href"));
   }, 2100);
 
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector("#image1").style.opacity = "0";
     document.querySelector("#group1").style.opacity = "1";
     document.querySelector("#group1").classList.add("bounce_in");
@@ -608,7 +608,12 @@ function openInfo() {
 function closeInfoBox() {
   document.querySelector(".infoBox").classList.remove("info_open");
   document.querySelector(".infoBox").classList.add("info_close");
-  setTimeout(function () {
+  setTimeout(function() {
     document.querySelector(".infoBox").style.display = "none";
   }, 500);
 }
+
+document.querySelector(".welcome-btn").addEventListener("click", e => {
+  e.preventDefault();
+  document.querySelector(".welcome").style.display = "none";
+});

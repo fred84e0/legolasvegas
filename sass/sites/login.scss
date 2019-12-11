@@ -48,7 +48,7 @@ header a {
     animation-timing-function: ease-in-out;
   }
 
-  .header-logo{
+  .header-logo {
     display: none;
   }
 
@@ -104,25 +104,25 @@ header a {
   .bar3 {
     width: 40px;
     height: 6px;
-    background-color: #FFB100;
+    background-color: #ffb100;
     margin: 6px 0;
     transition: 0.4s;
     z-index: 600;
   }
 
   .burger_bar_open .bar1 {
-    background-color: #FFB100;
+    background-color: #ffb100;
     transform: rotate(405deg);
     width: 30px;
     margin-left: 12px;
   }
 
   .burger_bar_open .bar2 {
-    background-color: #FFB100;
+    background-color: #ffb100;
   }
 
   .burger_bar_open .bar3 {
-    background-color: #FFB100;
+    background-color: #ffb100;
     transform: rotate(-405deg);
     width: 30px;
     margin-left: 12px;
@@ -172,7 +172,7 @@ header a {
   margin: 0 10px;
   height: 40px;
   width: 70px;
-  background: #9C141E;
+  background: #9c141e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,12 +198,11 @@ header a {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    color: #FFB100;
-
+    color: #ffb100;
   }
   #muteBTN {
-    fill: #FFB100;
-    stroke: #FFB100;
+    fill: #ffb100;
+    stroke: #ffb100;
     height: 30px;
   }
 }
@@ -365,7 +364,7 @@ form h2 {
   flex-direction: column;
   justify-content: space-around;
   border-radius: 5px;
-z-index: 700;
+  z-index: 700;
 
   h2 {
     position: fixed;
@@ -408,4 +407,31 @@ z-index: 700;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   z-index: 100;
+}
+
+.welcome {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  left: 50%;
+  margin-left: -200px;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  color: var(--button-color);
+  border-radius: 5px;
+  z-index: 700;
+}
+
+.welcome h1 {
+  text-align: center;
+}
+
+.welcome button {
+  padding: 10px 20px;
+  font-size: 1.2em;
 }
