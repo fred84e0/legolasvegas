@@ -132,6 +132,9 @@ function addEventListeners() {
 
 function fetchgif() {
   document.querySelector("#spin").style.pointerEvents = "none";
+  document.querySelector("#hold1").style.pointerEvents = "auto";
+  document.querySelector("#hold2").style.pointerEvents = "auto";
+  document.querySelector("#hold3").style.pointerEvents = "auto";
 
   credit.textContent -= "10";
   document.querySelector("#audio_spin").play();
@@ -251,6 +254,18 @@ function checkwin() {
     console.log("you've won");
     getScore(winning);
     winLights();
+    document.querySelector("#hold1").classList.remove("on");
+    document.querySelector("#hold2").classList.remove("on");
+    document.querySelector("#hold3").classList.remove("on");
+    document.querySelector("#group1").classList.remove("checked");
+    document.querySelector("#group2").classList.remove("checked");
+    document.querySelector("#group3").classList.remove("checked");
+    document.querySelector("#hold1").classList.add("uncheckedButton");
+    document.querySelector("#hold2").classList.add("uncheckedButton");
+    document.querySelector("#hold3").classList.add("uncheckedButton");
+    document.querySelector("#hold1").style.pointerEvents = "none";
+    document.querySelector("#hold2").style.pointerEvents = "none";
+    document.querySelector("#hold3").style.pointerEvents = "none";
   } else {
     console.log("you didnt win");
   }
@@ -396,6 +411,7 @@ function getScore(winning) {
   newScore = winnings + currentScore;
 
   console.log(newScore);
+
   document.querySelector("#score").textContent = newScore;
 
   return newScore;
@@ -444,4 +460,20 @@ function credit2DB(editData) {
   })
     .then(d => d.json())
     .then(t => console.log(t));
+}
+
+document.querySelector("#qMark").addEventListener("mouseover", openInfo);
+document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
+function openInfo() {
+  console.log("info");
+  document.querySelector(".infoBox").classList.remove("info_close");
+  document.querySelector(".infoBox").classList.add("info_open");
+  document.querySelector(".infoBox").style.display = "grid";
+}
+function closeInfoBox() {
+  document.querySelector(".infoBox").classList.remove("info_open");
+  document.querySelector(".infoBox").classList.add("info_close");
+  setTimeout(function() {
+    document.querySelector(".infoBox").style.display = "none";
+  }, 500);
 }

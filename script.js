@@ -610,5 +610,8 @@ function closeInfoBox() {
 
 document.querySelector(".welcome-btn").addEventListener("click", e => {
   e.preventDefault();
-  document.querySelector(".welcome").style.display = "none";
+  document.querySelector(".welcome").classList.add("close-welcome");
+  document.querySelector(".close-welcome").addEventListener("animationend", e => {
+    document.querySelector(".welcome").style.display = "none";
+  });
 });
