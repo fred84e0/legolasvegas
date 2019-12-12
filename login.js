@@ -383,14 +383,20 @@ document.querySelector(".submit_payment").addEventListener("click", e => {
 
   let num1 = Number(document.querySelector("#credit").textContent);
   let num2 = Number(document.querySelector("input[name=credit]").value);
-  let sum = num1 + num2;
 
-  document.querySelector("#credit").textContent = sum;
-  document.querySelector("#credit-form").style.display = "none";
+  if (isNaN(num2)) {
+    alert("Indsæt venligst et gyldigt beløb (Kun tal)");
+    document.querySelector("input[name=credit]").value = "";
+  } else {
+    let sum = num1 + num2;
 
-  credit2DB({
-    credit: sum
-  });
+    document.querySelector("#credit").textContent = sum;
+    document.querySelector("#credit-form").style.display = "none";
+
+    credit2DB({
+      credit: sum
+    });
+  }
 });
 
 function dropDown() {
