@@ -15,7 +15,6 @@ function start() {
   document.querySelectorAll(".close").forEach(em => {
     em.addEventListener("click", closeModal);
   });
-  gameLights();
   dropDown();
 }
 
@@ -25,6 +24,7 @@ window.addEventListener("DOMContentLoaded", event => {
     .then(svg => {
       document.querySelector("#slotmachine").innerHTML = svg;
       loadgif();
+      gameLights();
     });
 });
 function gameLights() {
@@ -256,9 +256,7 @@ function checkwin() {
   holdOption();
 
   updateCredit();
-  setTimeout(function() {
-    gameLights();
-  }, 2800);
+  setTimeout(function() {}, 2800);
 
   console.log(credit);
 }
