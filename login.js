@@ -373,6 +373,8 @@ function dropDown() {
   const options = document.querySelector(".options");
 }
 
+let newScore = "";
+
 function getScore(winning) {
   console.log(winning);
 
@@ -381,29 +383,31 @@ function getScore(winning) {
   console.log(currentScore);
   console.log(winnings);
 
-  let newScore = winnings + currentScore;
+  newScore = winnings + currentScore;
 
   console.log(newScore);
   document.querySelector("#score").textContent = newScore;
 
-  document.querySelector(".cashout").addEventListener("click", e => {
-    console.log("hej", newScore);
-
-    let conversion = newScore * 4;
-
-    let credits = Number(document.querySelector("#credit").textContent);
-
-    let cashCredits = credits + conversion;
-
-    console.log(cashCredits);
-
-    document.querySelector("#credit").textContent = cashCredits;
-    document.querySelector("#score").textContent = 0;
-    newScore = 0;
-
-    updateCredit();
-  });
+  return newScore;
 }
+
+document.querySelector(".cashout").addEventListener("click", e => {
+  console.log("hej", newScore);
+
+  let conversion = newScore * 4;
+
+  let credits = Number(document.querySelector("#credit").textContent);
+
+  let cashCredits = credits + conversion;
+
+  console.log(cashCredits);
+
+  document.querySelector("#credit").textContent = cashCredits;
+  document.querySelector("#score").textContent = 0;
+  newScore = 0;
+
+  updateCredit();
+});
 
 function updateCredit() {
   let cr = document.querySelector("#credit").textContent;
