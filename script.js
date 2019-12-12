@@ -115,7 +115,7 @@ function loginModal() {
 
 function signupModal() {
   const login = document.querySelector(".login-modal");
-  document.querySelector(".close").style.color = "#5c1182";
+  document.querySelector(".close").style.color = "#9C141E";
 
   if (login.classList.contains("show-modal")) {
     login.classList.remove("show-modal");
@@ -135,7 +135,7 @@ function loadgif() {
   let credit = document.querySelector("#credit");
   let score = document.querySelector("#score");
   score.innerHTML = 0;
-  credit.textContent = 3;
+  credit.textContent = 30;
 
   document.querySelector("#pos1").setAttribute("xlink:href", "svg/5.svg");
   document.querySelector("#pos2").setAttribute("xlink:href", "svg/5.svg");
@@ -202,7 +202,7 @@ function fetchgif() {
   document.querySelector("#spin").style.pointerEvents = "none";
   document.querySelector("#audio_spin").play();
 
-  credit.textContent--;
+  credit.textContent -= "10";
   let allPos = document.querySelectorAll(".pos");
 
   allPos.forEach(pos => {
@@ -578,7 +578,7 @@ signInButton.addEventListener("click", () => {
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
-  document.querySelector(".close").style.color = "#5c1182";
+  document.querySelector(".close").style.color = "#9C141E";
 });
 
 function checkUser() {
