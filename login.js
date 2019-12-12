@@ -49,6 +49,8 @@ function winLights() {
     q.classList.remove("blink");
     q.classList.add("winBlink");
   });
+
+  gameLights();
 }
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -300,9 +302,9 @@ function get() {
 
 function addAccountToTheDOM(account) {
   document.querySelector(".profile-name").innerHTML = account.username;
-  document.querySelector(".username").innerHTML = "Brugernavn: " + account.username;
-  document.querySelector(".mail").innerHTML = "E-mail: " + account.email;
-  document.querySelector(".password").innerHTML = "Password: " + account.password;
+  document.querySelector("#username").value = account.username;
+  document.querySelector("#email").value = account.email;
+  document.querySelector("#password").value = account.password;
   document.querySelector("#credit").innerHTML = account.credit;
 }
 
@@ -318,12 +320,17 @@ function openEditProfile() {
     const em = document.querySelector("input[name=email]").value;
     const cr = Number(document.querySelector("#credit").textContent);
     console.log(cr);
-    editProfile({
-      username: un,
-      password: pw,
-      email: em,
-      credit: cr
-    });
+
+    if (un == "" || pw == "" || em == "") {
+      alert("Fill out all boxes");
+    } else {
+      editProfile({
+        username: un,
+        password: pw,
+        email: em,
+        credit: cr
+      });
+    }
   });
 }
 
@@ -341,6 +348,9 @@ function editProfile(editData) {
   })
     .then(d => d.json())
     .then(t => console.log(t));
+  setTimeout(function() {
+    window.location.href = "login.html";
+  }, 1000);
 }
 
 document.querySelector(".getCredit").addEventListener("click", () => {

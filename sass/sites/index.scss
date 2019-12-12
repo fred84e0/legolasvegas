@@ -134,3 +134,17 @@
 #infoTxt p {
   padding-top: 0;
 }
+
+.welcome-btn {
+  background: var(--button-color);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.welcome-btn:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}

@@ -22,19 +22,18 @@
     text-align: center;
     color: white;
     padding: 20px;
-    background: linear-gradient(to right, #5c1182, #7f429e);
+    background-color: var(--background-color);
     width: 100%;
   }
 
   h3 {
-    color: #5c1182;
     text-align: center;
     padding-bottom: 20px;
   }
 
   input {
     border: none;
-    border-bottom: 1px solid #5c1182;
+    border-bottom: 1px solid black;
     font-size: 1em;
   }
 }

@@ -373,7 +373,7 @@ form h2 {
     border-radius: 5px 5px 0 0;
     width: 100%;
     text-align: center;
-    background: linear-gradient(to right, #5c1182, #7f429e);
+    background: var(--background-color);
     color: white;
   }
 
@@ -392,6 +392,7 @@ form h2 {
 
 .edit_button {
   padding: 10px 20px;
+  background-color: var(--button-color);
 }
 
 .button_wrapper {

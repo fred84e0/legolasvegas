@@ -559,12 +559,16 @@ document.querySelector("button").addEventListener("click", e => {
   const em = document.querySelector("input[name=email]").value;
   const cr = document.querySelector("#score").textContent;
 
-  post({
-    username: un,
-    password: pw,
-    email: em,
-    credit: cr
-  });
+  if (un == "" || pw == "" || em == "") {
+    alert("Fill out all boxes");
+  } else {
+    post({
+      username: un,
+      password: pw,
+      email: em,
+      credit: cr
+    });
+  }
 });
 
 const signUpButton = document.getElementById("signUp");

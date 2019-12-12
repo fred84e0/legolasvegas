@@ -12,14 +12,14 @@ body {
 
 button {
   border-radius: 5px;
-  background: #8a6f9e;
+  background-color: var(--button-color);
   border: none;
   color: #ffffff;
 }
 
 .uncheckedButton {
   opacity: 0.8;
-  fill: #2B5DE0 !important;
+  fill: #2b5de0 !important;
 }
 
 .st0 {
@@ -41,4 +41,15 @@ button {
 
 .st10 {
   font-family: "PressStart2P-Regular";
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+button,
+div {
+  font-family: var(--primary-font);
 }

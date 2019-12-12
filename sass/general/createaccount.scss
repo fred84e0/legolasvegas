@@ -48,13 +48,13 @@
   cursor: pointer;
 }
 
-.sign_in_button{
-  background-color: #FFB100 !important;
+.sign_in_button {
+  background-color: var(--button-color);
   border: none !important;
 }
 
-.sign_up_button{
-  background-color: #9C141E !important;
+.sign_up_button {
+  background-color: var(--button-color) !important;
   border: none !important;
 }
 
@@ -124,8 +124,8 @@
   z-index: 1;
 }
 
-.signup-modal{
-	z-index: 600;
+.signup-modal {
+  z-index: 600;
 }
 
 .container.right-panel-active .sign-up-container {
@@ -174,8 +174,7 @@
 
 .overlay {
   background: #ff416c;
-  background: -webkit-linear-gradient(to right, #9C141E, #FFB100);
-  background: linear-gradient(to right, #9C141E, #FFB100);
+  background: var(--background-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
