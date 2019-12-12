@@ -41,19 +41,19 @@
 .update-info {
   font-size: 0.8em;
 }
-
+#credit-form div {
+  margin: 25px 0;
+}
 .card_updater {
   background: none;
   color: grey;
   text-decoration: underline;
   cursor: pointer;
+  margin: 0 !important;
 }
 .submit_payment {
   padding: 10px 20px;
   font-size: 1.2em;
-}
-#credit-form div {
-  margin: 30px 0;
 }
 
 .payment-info div {

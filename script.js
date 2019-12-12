@@ -22,7 +22,7 @@ function start() {
   document.querySelector("#signup-btn").addEventListener("click", signupModal);
   document.querySelector("#mute-btn").addEventListener("click", muteSite);
 
-  document.querySelectorAll(".close").forEach(em => {
+  document.querySelectorAll(".close").Each(em => {
     em.addEventListener("click", closeModal);
   });
 
@@ -585,13 +585,6 @@ signUpButton.addEventListener("click", () => {
   document.querySelector(".close").style.color = "#9C141E";
 });
 
-function checkUser() {
-  if (document.querySelector("input[name=yourEmail]").value == "fake@user.com" && document.querySelector("input[name=yourPassword]").value == "fake123") {
-    window.location.href = "login.html";
-  } else {
-    alert("You shall not pass! Indtast venligst et rigtigt brugernavn");
-  }
-}
 document.querySelector("#qMark").addEventListener("mouseover", openInfo);
 document.querySelector("#qMark").addEventListener("mouseout", closeInfoBox);
 function openInfo() {
