@@ -12,7 +12,7 @@ document.querySelector(".sign_in_button").addEventListener("click", e => {
   checkID(yourEmail);
 });
 
-function checkID(yourEmail) {
+function checkID() {
   fetch(`https://frontendeksamen2019-2ef9.restdb.io/rest/accounts`, {
     method: "get",
     headers: {

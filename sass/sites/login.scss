@@ -192,7 +192,6 @@ header a {
 
 @media only screen and (max-width: 900px) {
   .header-btn {
-    margin-top: 50px;
     background: none;
     display: flex;
     flex-direction: row-reverse;
@@ -466,4 +465,15 @@ form h2 {
     top: 130%;
     opacity: 0.1;
   }
+}
+
+.animation--fade-up {
+  opacity: 0;
+  transform: translate(0, 40px);
+}
+
+.animation--fade-up.animation--visible {
+  opacity: 1;
+  transition: 1s;
+  transform: translate(0, 0);
 }

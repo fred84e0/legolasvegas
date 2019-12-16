@@ -1,6 +1,7 @@
 "use strict";
 
 let url = `https://frontendeksamen2019-2ef9.restdb.io/rest/accounts`;
+
 get();
 
 document.querySelector(".NameSort").addEventListener("click", () => {
@@ -62,6 +63,8 @@ function addAccountToTheDOM(account) {
     deleteIt(account._id);
   });
   document.querySelector("#app").prepend(copy);
+  document.addEventListener("keyup", logKey);
+  listenForAnimation();
 }
 
 function deleteIt(id) {
@@ -78,4 +81,48 @@ function deleteIt(id) {
     .then(data => {
       document.querySelector(`.account[data-accountid="${id}"]`).remove();
     });
+}
+
+function logKey() {
+  var input, filter, ul, li, a, b, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.querySelector("#app");
+  li = document.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].firstElementChild;
+    console.log(b);
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+function listenForAnimation() {
+  // callback function to do animations
+  const scrollImations = (entries, observer) => {
+    entries.forEach(entry => {
+      // only do animation if the element is fully on screen
+      if (entry.isIntersecting && entry.intersectionRatio == 1) {
+        entry.target.classList.add("animation--visible");
+      } else {
+      }
+    });
+  };
+
+  // create the observer
+  const options = {
+    threshold: 1.0
+  };
+  const observer = new IntersectionObserver(scrollImations, options);
+
+  // target the elements to be observed
+  const animations = document.querySelectorAll(".animation");
+  animations.forEach(animation => {
+    observer.observe(animation);
+  });
 }

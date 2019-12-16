@@ -21,10 +21,7 @@ function start() {
   document.querySelector("#login-btn").addEventListener("click", loginModal);
   document.querySelector("#signup-btn").addEventListener("click", signupModal);
   document.querySelector("#mute-btn").addEventListener("click", muteSite);
-
-  document.querySelectorAll(".close").Each(em => {
-    em.addEventListener("click", closeModal);
-  });
+  document.querySelector(".close").addEventListener("click", closeModal);
 
   document.querySelector("#burger_button").addEventListener("click", openSidebar);
   screenMeasure(screenWidth);
