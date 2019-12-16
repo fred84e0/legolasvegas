@@ -64,6 +64,7 @@ function addAccountToTheDOM(account) {
   });
   document.querySelector("#app").prepend(copy);
   document.addEventListener("keyup", logKey);
+  listenForAnimation();
 }
 
 function deleteIt(id) {
@@ -99,4 +100,29 @@ function logKey() {
       li[i].style.display = "none";
     }
   }
+}
+
+function listenForAnimation() {
+  // callback function to do animations
+  const scrollImations = (entries, observer) => {
+    entries.forEach(entry => {
+      // only do animation if the element is fully on screen
+      if (entry.isIntersecting && entry.intersectionRatio == 1) {
+        entry.target.classList.add("animation--visible");
+      } else {
+      }
+    });
+  };
+
+  // create the observer
+  const options = {
+    threshold: 1.0
+  };
+  const observer = new IntersectionObserver(scrollImations, options);
+
+  // target the elements to be observed
+  const animations = document.querySelectorAll(".animation");
+  animations.forEach(animation => {
+    observer.observe(animation);
+  });
 }
