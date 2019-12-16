@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
 
 body {
@@ -37,19 +38,4 @@ button {
 #hold2:active,
 #hold3:active {
   opacity: 0.8;
-}
-
-.st10 {
-  font-family: "PressStart2P-Regular";
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-a,
-button,
-div {
-  font-family: var(--primary-font);
 }
