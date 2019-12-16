@@ -469,3 +469,14 @@ form h2 {
     opacity: 0.1;
   }
 }
+
+.animation--fade-up {
+  opacity: 0;
+  transform: translate(0, 40px);
+}
+
+.animation--fade-up.animation--visible {
+  opacity: 1;
+  transition: 1s;
+  transform: translate(0, 0);
+}
