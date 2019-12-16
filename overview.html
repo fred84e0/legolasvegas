@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="svg/icon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.scss" />
@@ -17,23 +18,28 @@
 
   <body>
     <h1 class="text-white text-4xl text-center mt-10">Liste over konti</h1>
-
     <div class="button_wrapper text-center p-10">
+
+    <input type="text" id="myInput" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4  appearance-none leading-normal" placeholder="Søg efter brugernavn" title="Type in a name">
       <button class="creditFilter bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Credit</button>
-      <button class="NameSort bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Name</button>
+      <button class="NameSort bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Navn</button>
     </div>
 
+    <ul id="myUl">
     <div id="app" class="flex flex-wrap justify-center"></div>
     <template>
-      <article class="account bg-white rounded-lg p-6 w-1/4 m-4 ">
-        <h3></h3>
+      <li class="account bg-white rounded-lg p-6 w-1/4 m-4 ">
+        <h3 class="userName"></h3>
         <p></p>
         <h2></h2>
         <h4></h4>
         <button class="deleteaccount bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete account</button>
-      </article>
+      </li>
     </template>
+  </ul>
 
     <script src="overview.js"></script>
+
+
   </body>
 </html>
