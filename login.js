@@ -12,9 +12,6 @@ start();
 function start() {
   document.querySelector("#mute-btn").addEventListener("click", muteSite);
 
-  document.querySelectorAll(".close").forEach(em => {
-    em.addEventListener("click", closeModal);
-  });
   dropDown();
 }
 
