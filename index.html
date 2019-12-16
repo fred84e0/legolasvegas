@@ -27,10 +27,10 @@
     <nav id="header_menu">
       <ul class="outer-ul">
         <div id="signup-btn" class="header-btn">
-          <p>Sign up</p>
+          <p>Opret bruger</p>
         </div>
         <div id="login-btn" class="header-btn">
-          <p>Log in</p>
+          <p>Log ind</p>
         </div>
         <div id="mute-btn" class="header-btn">
           <div class="mute"></div>
@@ -128,35 +128,39 @@
     <h3 class="winner_title"></h3>
     <p class="winner_description"></p>
     
-        <h1>Create Account</h1>
-        <input type="text" id="username" name="username" placeholder="Name" required />
+        <h1>Opret Bruger</h1>
+        <input type="text" id="username" name="username" placeholder="Brugernavn" required />
         <input type="email" id="email" name="email" placeholder="E-mail" required />
         <input type="password" id="password" name="password" placeholder="Password" required />
-        <button class="sign_up_button">Sign Up</button>
+        <button class="sign_up_button">Opret</button>
       </form>
     </div>
 
     <div class="form-container sign-in-container">
       <form action="#">
-        <h1>Sign in</h1>
+        <h1>Log ind</h1>
         <input name="yourEmail" type="email" placeholder="E-mail" required />
         <input name="yourPassword" type="password" placeholder="Password" required />
-        <a href="#" class="forgot-password">Forgot your password?</a>
-        <button class="sign_in_button">Sign In</button>
+        <a href="#" class="forgot-password">Glemt dit password?</a>
+        <button class="sign_in_button">Log ind</button>
       </form>
     </div>
 
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left">
-          <h1>Already got an account?</h1>
-          <p>Then you need to sign in - one does not simply walk into Mordor!</p>
-          <button class="ghost" id="signIn">Sign In</button>
+          <h1>Har du allerede en bruger?</h1>
+          <p>
+            Så skal du logge ind og Fortsætte din rejse!
+          </p>
+          <button class="ghost" id="signIn">Log ind</button>
         </div>
         <div class="overlay-panel overlay-right">
-          <h1>Don't have an account yet?</h1>
-          <p>Let us know who you are, and we can start our journey together!</p>
-          <button class="ghost" id="signUp">Sign Up</button>
+          <h1>Ikke oprettet som bruger endnu?</h1>
+          <p>
+            Fortæl os hvem du er og lad os starte rejsen sammen!
+          </p>
+          <button class="ghost" id="signUp">Opret</button>
         </div>
       </div>
     </div>
