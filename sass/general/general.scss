@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
 }
 
 body {
@@ -38,4 +37,9 @@ button {
 #hold2:active,
 #hold3:active {
   opacity: 0.8;
+}
+
+#score,
+#credit {
+  font-family: "Press Start 2P", cursive;
 }

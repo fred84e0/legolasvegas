@@ -39,9 +39,7 @@
             enable-background: new;
         }
 
-        .st10 {
-            font-family: "Ubuntu", sans-serif;
-        }
+     
 
         .st11 {
             font-size: 21.32px;
