@@ -97,7 +97,7 @@ function addEventListeners() {
     document.querySelector(`#group${identifier}`).classList.remove("checked");
     document.querySelector(`#hold${identifier}`).classList.add("uncheckedButton");
   } else if (document.querySelector(`#hold1`).classList.contains("on") && document.querySelector(`#hold2`).classList.contains("on")) {
-    alert("You can only hold two buttons add once");
+    alert("You can only hold two buttons at once");
 
     document.querySelector(`#hold${identifier}`).classList.remove("on");
 
@@ -105,7 +105,7 @@ function addEventListeners() {
 
     document.querySelector(`#hold${identifier}`).classList.add("uncheckedButton");
   } else if (document.querySelector(`#hold1`).classList.contains("on") && document.querySelector(`#hold3`).classList.contains("on")) {
-    alert("You can only hold two buttons add once");
+    alert("You can only hold two buttons at once");
 
     document.querySelector(`#hold${identifier}`).classList.remove("on");
 
@@ -113,7 +113,7 @@ function addEventListeners() {
 
     document.querySelector(`#hold${identifier}`).classList.add("uncheckedButton");
   } else if (document.querySelector(`#hold2`).classList.contains("on") && document.querySelector(`#hold3`).classList.contains("on")) {
-    alert("You can only hold two buttons add once");
+    alert("You can only hold two buttons at once");
 
     document.querySelector(`#hold${identifier}`).classList.remove("on");
 
@@ -133,7 +133,6 @@ function fetchgif() {
   document.querySelector("#hold2").style.pointerEvents = "auto";
   document.querySelector("#hold3").style.pointerEvents = "auto";
 
-  credit.textContent -= "10";
   document.querySelector("#audio_spin").play();
   if (Number(document.querySelector("#credit").textContent) <= 9) {
     console.log("no credz");
